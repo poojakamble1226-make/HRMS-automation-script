@@ -20,7 +20,7 @@ public class BaseTest {
     protected static WebDriver    driver;
     protected static String       baseUrl;
     protected static NetworkUtils networkUtils;
-
+ 
     @BeforeSuite(alwaysRun = true)
     public void suiteSetUp() throws InterruptedException {
         DriverManager.initDriver(ConfigReader.getBrowser());
