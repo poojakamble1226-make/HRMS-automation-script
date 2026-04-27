@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="1" name="Failed suite [HRMS Test Suite]" guice-stage="DEVELOPMENT" verbose="0">
+  <test thread-count="1" name="Branch Master Tests(failed)" verbose="0">
+    <classes>
+      <class name="com.hrms.tests.BranchMasterTest">
+        <methods>
+          <include name="suiteTearDown"/>
+          <include name="suiteSetUp"/>
+          <include name="loginAndInitPage"/>
+          <include name="testInvalidPhoneNumber"/>
+        </methods>
+      </class> <!-- com.hrms.tests.BranchMasterTest -->
+    </classes>
+  </test> <!-- Branch Master Tests(failed) -->
+  <test thread-count="1" name="Company Master Tests(failed)" verbose="0">
+    <classes>
+      <class name="com.hrms.tests.CompanyMasterTest">
+        <methods>
+          <include name="suiteSetUp"/>
+          <include name="suiteTearDown"/>
+          <include name="testDuplicateCompanyValidation"/>
+          <include name="loginAndInitPage"/>
+          <include name="testDeleteCompany"/>
+        </methods>
+      </class> <!-- com.hrms.tests.CompanyMasterTest -->
+    </classes>
+  </test> <!-- Company Master Tests(failed) -->
+  <test thread-count="1" name="Designation master Tests(failed)" verbose="0">
+    <classes>
+      <class name="com.hrms.tests.DesignationmasterTest">
+        <methods>
+          <include name="suiteTearDown"/>
+          <include name="suiteSetUp"/>
+          <include name="testAdddesignation"/>
+          <include name="loginAndInitPage"/>
+          <include name="testDuplicateDesignationValidation"/>
+          <include name="testDeleteCompany"/>
+        </methods>
+      </class> <!-- com.hrms.tests.DesignationmasterTest -->
+    </classes>
+  </test> <!-- Designation master Tests(failed) -->
+</suite> <!-- Failed suite [HRMS Test Suite] -->

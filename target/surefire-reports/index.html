@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset='utf-8'>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
+    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
+      <br/>
+      <span class="top-banner-font-1">1 suite, 6 failed tests</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" title="Collapse/expand all the suites" class="collapse-all-link">
+          <img src="collapseall.gif" class="collapse-all-icon">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" panel-name="suite-HRMS_Test_Suite" class="navigator-link">
+              <span class="suite-name border-failed">HRMS Test Suite</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" panel-name="test-xml-HRMS_Test_Suite" class="navigator-link ">
+                    <span>C:\Users\pooja.karande\Desktop\SeleniumHRMS\testng.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="testlist-HRMS_Test_Suite" class="navigator-link ">
+                    <span class="test-stats">6 tests</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="group-HRMS_Test_Suite" class="navigator-link ">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="times-HRMS_Test_Suite" class="navigator-link ">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="reporter-HRMS_Test_Suite" class="navigator-link ">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="ignored-methods-HRMS_Test_Suite" class="navigator-link ">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="chronological-HRMS_Test_Suite" class="navigator-link ">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">15 methods, 6 failed,   9 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-HRMS_Test_Suite" class="hide-methods failed suite-HRMS_Test_Suite"> (hide)</a> <!-- hide-methods failed suite-HRMS_Test_Suite -->
+                      <a href="#" panel-name="suite-HRMS_Test_Suite" class="show-methods failed suite-HRMS_Test_Suite"> (show)</a> <!-- show-methods failed suite-HRMS_Test_Suite -->
+                    </span>
+                    <div class="method-list-content failed suite-HRMS_Test_Suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-HRMS_Test_Suite" title="com.hrms.tests.DesignationmasterTest" class="method navigator-link" hash-for-method="testAdddesignation">testAdddesignation</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-HRMS_Test_Suite" title="com.hrms.tests.CompanyMasterTest" class="method navigator-link" hash-for-method="testDeleteCompany">testDeleteCompany</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-HRMS_Test_Suite" title="com.hrms.tests.DesignationmasterTest" class="method navigator-link" hash-for-method="testDeleteCompany">testDeleteCompany</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-HRMS_Test_Suite" title="com.hrms.tests.CompanyMasterTest" class="method navigator-link" hash-for-method="testDuplicateCompanyValidation">testDuplicateCompanyValidation</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-HRMS_Test_Suite" title="com.hrms.tests.DesignationmasterTest" class="method navigator-link" hash-for-method="testDuplicateDesignationValidation">testDuplicateDesignationValidation</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-HRMS_Test_Suite" title="com.hrms.tests.BranchMasterTest" class="method navigator-link" hash-for-method="testInvalidPhoneNumber">testInvalidPhoneNumber</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-HRMS_Test_Suite -->
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-HRMS_Test_Suite" class="hide-methods passed suite-HRMS_Test_Suite"> (hide)</a> <!-- hide-methods passed suite-HRMS_Test_Suite -->
+                      <a href="#" panel-name="suite-HRMS_Test_Suite" class="show-methods passed suite-HRMS_Test_Suite"> (show)</a> <!-- show-methods passed suite-HRMS_Test_Suite -->
+                    </span>
+                    <div class="method-list-content passed suite-HRMS_Test_Suite">
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-HRMS_Test_Suite" title="com.hrms.tests.BranchMasterTest" class="method navigator-link" hash-for-method="testAddBranch">testAddBranch</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-HRMS_Test_Suite" title="com.hrms.tests.CompanyMasterTest" class="method navigator-link" hash-for-method="testAddCompany">testAddCompany</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-HRMS_Test_Suite" title="com.hrms.tests.InterviewModeTest" class="method navigator-link" hash-for-method="testAddInterviewMode">testAddInterviewMode</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-HRMS_Test_Suite" title="com.hrms.tests.InterviewRoundMasterTest" class="method navigator-link" hash-for-method="testAddInterviewRound">testAddInterviewRound</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-HRMS_Test_Suite" title="com.hrms.tests.InterviewModeTest" class="method navigator-link" hash-for-method="testBlankInterviewModeValidation">testBlankInterviewModeValidation</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-HRMS_Test_Suite" title="com.hrms.tests.InterviewRoundMasterTest" class="method navigator-link" hash-for-method="testBlankInterviewRoundValidation">testBlankInterviewRoundValidation</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-HRMS_Test_Suite" title="com.hrms.tests.BranchMasterTest" class="method navigator-link" hash-for-method="testBranchNameWithNumbers">testBranchNameWithNumbers</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-HRMS_Test_Suite" title="com.hrms.tests.BranchMasterTest" class="method navigator-link" hash-for-method="testEmptyBranchValidation">testEmptyBranchValidation</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-HRMS_Test_Suite" title="com.hrms.tests.LoginTest" class="method navigator-link" hash-for-method="testValidLogin">testValidLogin</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-HRMS_Test_Suite -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-HRMS_Test_Suite" class="panel HRMS_Test_Suite">
+          <div class="suite-HRMS_Test_Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.hrms.tests.BranchMasterTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testInvalidPhoneNumber">
+                  </a> <!-- testInvalidPhoneNumber -->
+                  <span class="method-name">testInvalidPhoneNumber</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.cssSelector: button[type=&apos;submit&apos;]:not([disabled]) (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.12&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.102, chrome: {chromedriverVersion: 147.0.7727.117 (474cc805edd..., userDataDir: C:\Users\POOJA~1.KAR\AppDat...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60813}, goog:processID: 19876, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60813/devtoo..., se:cdpVersion: 147.0.7727.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3c27c332d23501a14018e6516401fa78
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.hrms.pages.BasePage.waitClickable(BasePage.java:33)
+	at com.hrms.pages.BranchMasterPage.submitForm(BranchMasterPage.java:60)
+	at com.hrms.tests.BranchMasterTest.testInvalidPhoneNumber(BranchMasterTest.java:98)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 31 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Phone number should be exactly 10 digits)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-HRMS_Test_Suite-class-failed -->
+          <div class="suite-HRMS_Test_Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.hrms.tests.DesignationmasterTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testAdddesignation">
+                  </a> <!-- testAdddesignation -->
+                  <span class="method-name">testAdddesignation</span>
+                  <div class="stack-trace">java.lang.UnsupportedOperationException: Unimplemented method &apos;FillDesignationForm&apos;
+	at com.hrms.pages.DesignationmasterPage.FillDesignationForm(DesignationmasterPage.java:67)
+	at com.hrms.tests.DesignationmasterTest.testAdddesignation(DesignationmasterTest.java:39)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 31 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Adding a new Designation with valid data should succeed)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testDeleteCompany">
+                  </a> <!-- testDeleteCompany -->
+                  <span class="method-name">testDeleteCompany</span>
+                  <div class="stack-trace">java.lang.UnsupportedOperationException: Unimplemented method &apos;deleteLastDesignation&apos;
+	at com.hrms.pages.DesignationmasterPage.deleteLastDesignation(DesignationmasterPage.java:82)
+	at com.hrms.tests.DesignationmasterTest.testDeleteCompany(DesignationmasterTest.java:73)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 31 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Deleting the last Designation in the list should complete without error)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testDuplicateDesignationValidation">
+                  </a> <!-- testDuplicateDesignationValidation -->
+                  <span class="method-name">testDuplicateDesignationValidation</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //input[@placeholder=&apos;Enter Designation name&apos;] (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.12&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.102, chrome: {chromedriverVersion: 147.0.7727.117 (474cc805edd..., userDataDir: C:\Users\POOJA~1.KAR\AppDat...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60813}, goog:processID: 19876, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60813/devtoo..., se:cdpVersion: 147.0.7727.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3c27c332d23501a14018e6516401fa78
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.hrms.pages.BasePage.waitVisible(BasePage.java:29)
+	at com.hrms.pages.DesignationmasterPage.fillDesignationForm(DesignationmasterPage.java:38)
+	at com.hrms.tests.DesignationmasterTest.testDuplicateDesignationValidation(DesignationmasterTest.java:58)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 31 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Adding a Designation that already exists should show a duplicate error)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-HRMS_Test_Suite-class-failed -->
+          <div class="suite-HRMS_Test_Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.hrms.tests.CompanyMasterTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testDeleteCompany">
+                  </a> <!-- testDeleteCompany -->
+                  <span class="method-name">testDeleteCompany</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.cssSelector: table tbody tr:last-child button (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.12&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.102, chrome: {chromedriverVersion: 147.0.7727.117 (474cc805edd..., userDataDir: C:\Users\POOJA~1.KAR\AppDat...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60813}, goog:processID: 19876, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60813/devtoo..., se:cdpVersion: 147.0.7727.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3c27c332d23501a14018e6516401fa78
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.hrms.pages.BasePage.waitClickable(BasePage.java:33)
+	at com.hrms.pages.CompanyMasterPage.deleteLastCompany(CompanyMasterPage.java:54)
+	at com.hrms.tests.CompanyMasterTest.testDeleteCompany(CompanyMasterTest.java:73)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 31 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Deleting the last company in the list should complete without error)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testDuplicateCompanyValidation">
+                  </a> <!-- testDuplicateCompanyValidation -->
+                  <span class="method-name">testDuplicateCompanyValidation</span>
+                  <div class="stack-trace">java.lang.AssertionError: Duplicate-company error should appear expected [true] but found [false]
+	at com.hrms.tests.CompanyMasterTest.testDuplicateCompanyValidation(CompanyMasterTest.java:61)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 34 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Adding a company that already exists should show a duplicate error)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-HRMS_Test_Suite-class-failed -->
+          <div class="suite-HRMS_Test_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.hrms.tests.InterviewRoundMasterTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testAddInterviewRound">
+                  </a> <!-- testAddInterviewRound -->
+                  <span class="method-name">testAddInterviewRound</span>
+                  <em>
+(Adding a new interview timeline with valid data should succeed)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testBlankInterviewRoundValidation">
+                  </a> <!-- testBlankInterviewRoundValidation -->
+                  <span class="method-name">testBlankInterviewRoundValidation</span>
+                  <em>
+(Verify blank validation for interview timeline form)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-HRMS_Test_Suite-class-passed -->
+          <div class="suite-HRMS_Test_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.hrms.tests.BranchMasterTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testAddBranch">
+                  </a> <!-- testAddBranch -->
+                  <span class="method-name">testAddBranch</span>
+                  <em>
+(A fully filled branch form should submit without errors)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testBranchNameWithNumbers">
+                  </a> <!-- testBranchNameWithNumbers -->
+                  <span class="method-name">testBranchNameWithNumbers</span>
+                  <em>
+(Branch name should not accept numeric values)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testEmptyBranchValidation">
+                  </a> <!-- testEmptyBranchValidation -->
+                  <span class="method-name">testEmptyBranchValidation</span>
+                  <em>
+(Submitting an empty branch form should show required-field errors)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-HRMS_Test_Suite-class-passed -->
+          <div class="suite-HRMS_Test_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.hrms.tests.InterviewModeTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testAddInterviewMode">
+                  </a> <!-- testAddInterviewMode -->
+                  <span class="method-name">testAddInterviewMode</span>
+                  <em>
+(Adding a new interview mode with valid data should succeed)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testBlankInterviewModeValidation">
+                  </a> <!-- testBlankInterviewModeValidation -->
+                  <span class="method-name">testBlankInterviewModeValidation</span>
+                  <em>
+(Verify blank validation for interview mode form)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-HRMS_Test_Suite-class-passed -->
+          <div class="suite-HRMS_Test_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.hrms.tests.CompanyMasterTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testAddCompany">
+                  </a> <!-- testAddCompany -->
+                  <span class="method-name">testAddCompany</span>
+                  <em>
+(Adding a new company with valid data should succeed)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-HRMS_Test_Suite-class-passed -->
+          <div class="suite-HRMS_Test_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.hrms.tests.LoginTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testValidLogin">
+                  </a> <!-- testValidLogin -->
+                  <span class="method-name">testValidLogin</span>
+                  <em>
+(Valid credentials should redirect to the dashboard)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-HRMS_Test_Suite-class-passed -->
+        </div> <!-- panel HRMS_Test_Suite -->
+        <div panel-name="test-xml-HRMS_Test_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">C:\Users\pooja.karande\Desktop\SeleniumHRMS\testng.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite thread-count=&quot;1&quot; name=&quot;HRMS Test Suite&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot;&gt;
+  &lt;test thread-count=&quot;1&quot; name=&quot;Login Tests&quot; verbose=&quot;0&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.hrms.tests.LoginTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Login Tests --&gt;
+  &lt;test thread-count=&quot;1&quot; name=&quot;Branch Master Tests&quot; verbose=&quot;0&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.hrms.tests.BranchMasterTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Branch Master Tests --&gt;
+  &lt;test thread-count=&quot;1&quot; name=&quot;Company Master Tests&quot; verbose=&quot;0&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.hrms.tests.CompanyMasterTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Company Master Tests --&gt;
+  &lt;test thread-count=&quot;1&quot; name=&quot;Interview Master Tests&quot; verbose=&quot;0&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.hrms.tests.InterviewModeTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Interview Master Tests --&gt;
+  &lt;test thread-count=&quot;1&quot; name=&quot;Interview Round Master Tests&quot; verbose=&quot;0&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.hrms.tests.InterviewRoundMasterTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Interview Round Master Tests --&gt;
+  &lt;test thread-count=&quot;1&quot; name=&quot;Designation master Tests&quot; verbose=&quot;0&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.hrms.tests.DesignationmasterTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Designation master Tests --&gt;
+&lt;/suite&gt; &lt;!-- HRMS Test Suite --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-HRMS_Test_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for HRMS Test Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">Login Tests (1 class)</span>
+              </li>
+              <li>
+                <span class="test-name">Branch Master Tests (1 class)</span>
+              </li>
+              <li>
+                <span class="test-name">Company Master Tests (1 class)</span>
+              </li>
+              <li>
+                <span class="test-name">Interview Master Tests (1 class)</span>
+              </li>
+              <li>
+                <span class="test-name">Interview Round Master Tests (1 class)</span>
+              </li>
+              <li>
+                <span class="test-name">Designation master Tests (1 class)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-HRMS_Test_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for HRMS Test Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-HRMS_Test_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for HRMS Test Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_HRMS_Test_Suite');
+function tableData_HRMS_Test_Suite() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(15);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'testDuplicateDesignationValidation')
+data.setCell(0, 2, 'com.hrms.tests.DesignationmasterTest')
+data.setCell(0, 3, 24289);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'testInvalidPhoneNumber')
+data.setCell(1, 2, 'com.hrms.tests.BranchMasterTest')
+data.setCell(1, 3, 23005);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'testDeleteCompany')
+data.setCell(2, 2, 'com.hrms.tests.CompanyMasterTest')
+data.setCell(2, 3, 20787);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'testBranchNameWithNumbers')
+data.setCell(3, 2, 'com.hrms.tests.BranchMasterTest')
+data.setCell(3, 3, 7079);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'testAddInterviewRound')
+data.setCell(4, 2, 'com.hrms.tests.InterviewRoundMasterTest')
+data.setCell(4, 3, 6557);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'testAddInterviewMode')
+data.setCell(5, 2, 'com.hrms.tests.InterviewModeTest')
+data.setCell(5, 3, 6539);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'testBlankInterviewModeValidation')
+data.setCell(6, 2, 'com.hrms.tests.InterviewModeTest')
+data.setCell(6, 3, 6358);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'testBlankInterviewRoundValidation')
+data.setCell(7, 2, 'com.hrms.tests.InterviewRoundMasterTest')
+data.setCell(7, 3, 6283);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'testAddBranch')
+data.setCell(8, 2, 'com.hrms.tests.BranchMasterTest')
+data.setCell(8, 3, 4769);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'testAddCompany')
+data.setCell(9, 2, 'com.hrms.tests.CompanyMasterTest')
+data.setCell(9, 3, 4681);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'testDuplicateCompanyValidation')
+data.setCell(10, 2, 'com.hrms.tests.CompanyMasterTest')
+data.setCell(10, 3, 4584);
+data.setCell(11, 0, 11)
+data.setCell(11, 1, 'testAdddesignation')
+data.setCell(11, 2, 'com.hrms.tests.DesignationmasterTest')
+data.setCell(11, 3, 4098);
+data.setCell(12, 0, 12)
+data.setCell(12, 1, 'testEmptyBranchValidation')
+data.setCell(12, 2, 'com.hrms.tests.BranchMasterTest')
+data.setCell(12, 3, 3634);
+data.setCell(13, 0, 13)
+data.setCell(13, 1, 'testValidLogin')
+data.setCell(13, 2, 'com.hrms.tests.LoginTest')
+data.setCell(13, 3, 3357);
+data.setCell(14, 0, 14)
+data.setCell(14, 1, 'testDeleteCompany')
+data.setCell(14, 2, 'com.hrms.tests.DesignationmasterTest')
+data.setCell(14, 3, 2464);
+window.suiteTableData['HRMS_Test_Suite']= { tableData: data, tableDiv: 'times-div-HRMS_Test_Suite'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 2 minutes</span>
+              <div id="times-div-HRMS_Test_Suite">
+              </div> <!-- times-div-HRMS_Test_Suite -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-HRMS_Test_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for HRMS Test Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-HRMS_Test_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-HRMS_Test_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.hrms.tests.DesignationmasterTest</div> <!-- chronological-class-name -->
+              <div class="configuration-suite before">
+                <span class="method-name">suiteSetUp</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-suite before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.hrms.tests.LoginTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">initPage</span>
+                <span class="method-start">13133 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">testValidLogin</span>
+                <span class="method-start">13177 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.hrms.tests.BranchMasterTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">loginAndInitPage</span>
+                <span class="method-start">16653 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">testEmptyBranchValidation</span>
+                <span class="method-start">16768 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testAddBranch</span>
+                <span class="method-start">20402 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testBranchNameWithNumbers</span>
+                <span class="method-start">25177 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testInvalidPhoneNumber</span>
+                <span class="method-start">32256 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.hrms.tests.CompanyMasterTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">loginAndInitPage</span>
+                <span class="method-start">55308 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">testAddCompany</span>
+                <span class="method-start">55322 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testDuplicateCompanyValidation</span>
+                <span class="method-start">60003 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testDeleteCompany</span>
+                <span class="method-start">64587 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.hrms.tests.InterviewModeTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">loginAndInitPage</span>
+                <span class="method-start">85468 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">testAddInterviewMode</span>
+                <span class="method-start">86494 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testBlankInterviewModeValidation</span>
+                <span class="method-start">93033 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.hrms.tests.InterviewRoundMasterTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">loginAndInitPage</span>
+                <span class="method-start">99408 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">testAddInterviewRound</span>
+                <span class="method-start">100176 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testBlankInterviewRoundValidation</span>
+                <span class="method-start">106733 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.hrms.tests.DesignationmasterTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">loginAndInitPage</span>
+                <span class="method-start">113016 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testAdddesignation</span>
+                <span class="method-start">113054 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testDuplicateDesignationValidation</span>
+                <span class="method-start">117152 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testDeleteCompany</span>
+                <span class="method-start">141443 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-suite after">
+                <span class="method-name">suiteTearDown</span>
+                <span class="method-start">143952 ms</span>
+              </div> <!-- configuration-suite after -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+<script type="text/javascript" src="testng-reports2.js"></script>
+</html>

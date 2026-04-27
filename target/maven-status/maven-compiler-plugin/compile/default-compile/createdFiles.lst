@@ -1,0 +1,5 @@
+com\hrms\pages\BasePage.class
+com\hrms\driver\DriverManager.class
+com\hrms\config\ConfigReader.class
+com\hrms\pages\CompanyMasterPage.class
+com\hrms\pages\BranchMasterPage.class

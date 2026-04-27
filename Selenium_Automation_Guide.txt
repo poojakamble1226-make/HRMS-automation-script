@@ -1,0 +1,689 @@
+================================================================================
+         SELENIUM HRMS AUTOMATION PROJECT - COMPLETE BEGINNER GUIDE
+================================================================================
+                         Prepared for: Pooja Karande
+                         Date: 17 April 2026
+================================================================================
+
+
+TABLE OF CONTENTS
+-----------------
+  1. What is This Project?
+  2. Project Structure (What's What)
+  3. The Complete Flow (What Happens When You Run Tests)
+  4. How Page Objects Work
+  5. How Elements Are Found (Locators)
+  6. Test Reports
+  7. How to Write Your Own Test (Step by Step)
+  8. Quick Reference Cheat Sheet
+  9. Skills You Need to Learn (Roadmap)
+
+
+================================================================================
+1. WHAT IS THIS PROJECT?
+================================================================================
+
+Imagine you hired a robot to test your HRMS website. Instead of a human
+clicking buttons and checking if things work, this robot (Selenium) opens a
+real Chrome browser, types into fields, clicks buttons, and checks if the
+right thing happened.
+
+This project is the INSTRUCTION MANUAL for that robot.
+
+It tests the HRMS Admin Panel at:
+  https://hrms-admin.dealmoneyonline.com/
+
+It currently tests 3 things:
+  - Can we LOG IN with valid credentials?
+  - Does the BRANCH MASTER page work? (add branch, validation)
+  - Does the COMPANY MASTER page work? (add, duplicate check, delete)
+
+
+================================================================================
+2. PROJECT STRUCTURE (WHAT'S WHAT)
+================================================================================
+
+SeleniumHRMS/
+|
+|-- pom.xml                        <-- The shopping list (what libraries to download)
+|-- testng.xml                     <-- The run order (which tests, in what sequence)
+|
+|-- src/main/java/com/hrms/        <-- The "helpers" (not tests themselves)
+|   |-- config/ConfigReader.java       Reads settings (URL, username, password)
+|   |-- driver/DriverManager.java      Opens/closes the Chrome browser
+|   |-- pages/BasePage.java            Common actions (click, type, wait)
+|   |-- pages/LoginPage.java           Knows how to interact with Login screen
+|   |-- pages/BranchMasterPage.java    Knows how to interact with Branch screen
+|   |-- pages/CompanyMasterPage.java   Knows how to interact with Company screen
+|   |-- utils/NetworkUtils.java        Checks internet & site availability
+|
+|-- src/test/java/com/hrms/        <-- The actual tests
+|   |-- base/BaseTest.java             Setup that runs before ALL tests
+|   |-- tests/
+|       |-- LoginTest.java             "Can we log in?"
+|       |-- BranchMasterTest.java      "Does the Branch page work?"
+|       |-- CompanyMasterTest.java     "Does the Company page work?"
+|
+|-- src/test/resources/
+|   |-- config.properties              Your website URL, username, password
+|
+|-- target/surefire-reports/        <-- Test reports generated here after running
+
+
+WHO DOES WHAT:
+--------------
+  pom.xml           = "What tools do I need?" (Selenium, TestNG, WebDriverManager)
+  config.properties = "What website, what credentials, what browser?"
+  testng.xml        = "Which tests to run, in what order?"
+  BaseTest.java     = "Open browser, check internet, close browser when done"
+  Page Objects      = "How to interact with each screen"
+  Test Classes      = "What to verify on each screen"
+
+
+================================================================================
+3. THE COMPLETE FLOW (What Happens When You Type: mvn test)
+================================================================================
+
+STEP 1: MAVEN READS pom.xml
+----------------------------
+  This is like a shopping list. It says:
+    - "I need Selenium 4.21.0" (the robot that controls Chrome)
+    - "I need TestNG 7.10.2" (the framework that runs tests & reports results)
+    - "I need WebDriverManager 5.8.0" (auto-downloads ChromeDriver)
+
+  Maven downloads all these if not already on your machine.
+
+
+STEP 2: MAVEN READS testng.xml
+-------------------------------
+  Maven's surefire-plugin sees: "use testng.xml to know what to run."
+
+  TestNG reads this file and learns:
+
+    Suite: "HRMS Test Suite"
+      |-- Test Group 1: LoginTest         <-- runs FIRST
+      |-- Test Group 2: BranchMasterTest  <-- runs SECOND
+      |-- Test Group 3: CompanyMasterTest <-- runs THIRD
+
+  *** This file controls the order. If you add a new test class,
+      you MUST add it here too, or it won't run. ***
+
+
+STEP 3: @BeforeSuite FIRES (BaseTest.java)
+------------------------------------------
+  Before any test runs, TestNG calls suiteSetUp():
+
+    1. ConfigReader reads config.properties
+       -> Gets: URL = https://hrms-admin.dealmoneyonline.com/
+       -> Gets: browser = chrome
+       -> Gets: username & password
+
+    2. DriverManager opens Chrome
+       -> WebDriverManager auto-downloads the matching ChromeDriver
+       -> Opens a real Chrome window (maximized)
+
+    3. Pre-flight checks:
+       -> Opens google.com to check: "Do we have internet?"
+       -> Opens the HRMS site to check: "Is the site alive?"
+       (If either fails, the entire test suite stops with an error)
+
+
+STEP 4: LoginTest RUNS
+-----------------------
+  @BeforeClass -> Creates a LoginPage object
+
+  testValidLogin():
+    1. Robot goes to: .../auth/login
+    2. Finds the username field (By.id("username")), types the username
+    3. Finds the password field (By.id("password")), types the password
+    4. Finds the Login button (By.cssSelector("button.submit-btn")), clicks it
+    5. CHECKS: Does the URL now contain "dashboard"?
+       -> YES = PASS
+       -> NO  = FAIL
+
+
+STEP 5: BranchMasterTest RUNS
+------------------------------
+  @BeforeClass -> Already logged in? Skip login. Creates BranchMasterPage.
+
+  testEmptyBranchValidation():
+    1. Goes to the Branch Master page
+    2. Clicks "Add Branch" button
+    3. Touches each field WITHOUT typing, then clicks Submit
+    4. CHECKS: Does the page show the word "required"?
+       -> YES = PASS (validation is working!)
+
+  testAddBranch():
+    1. Goes to Branch Master page again
+    2. Clicks "Add Branch"
+    3. Fills in: name, address="Mumbai", phone, email
+    4. Clicks Submit
+    (Checks it doesn't crash)
+
+
+STEP 6: CompanyMasterTest RUNS
+-------------------------------
+  Same pattern - tests Add, Duplicate validation, and Delete for companies.
+
+
+STEP 7: @AfterSuite FIRES
+--------------------------
+  Chrome browser closes. Done.
+
+
+================================================================================
+4. HOW PAGE OBJECTS WORK (The Key Pattern)
+================================================================================
+
+This is the most important design concept in this project.
+
+WITHOUT Page Objects (bad way):
+-------------------------------
+  // Every test has to know EXACTLY where every button is
+  driver.findElement(By.id("username")).sendKeys("admin");
+  driver.findElement(By.id("password")).sendKeys("pass");
+  driver.findElement(By.cssSelector("button.submit-btn")).click();
+
+  Problem: If the website changes the button's class from "submit-btn"
+  to "login-btn", you have to fix it in EVERY test file.
+
+
+WITH Page Objects (what this project does):
+-------------------------------------------
+  // Test just says WHAT to do, not HOW
+  loginPage.login("admin", "pass");
+
+  The "how" lives in LoginPage.java. If the website changes, you fix it
+  in ONE place -- the page object -- not in every test.
+
+
+THE HIERARCHY:
+--------------
+  BasePage (common stuff: click, type, wait)
+     |-- LoginPage          (knows login screen elements)
+     |-- BranchMasterPage   (knows branch screen elements)
+     |-- CompanyMasterPage  (knows company screen elements)
+
+  BasePage provides reusable methods:
+    - waitVisible(locator)   = Wait for element to appear, then return it
+    - waitClickable(locator) = Wait for element to be clickable
+    - jsClick(locator)       = Scroll to element and click via JavaScript
+    - type(locator, text)    = Clear field and type text
+    - touchField(locator)    = Click a field and press TAB (triggers validation)
+    - isTextPresent(text)    = Check if text exists anywhere on the page
+    - pause(ms)              = Wait for specified milliseconds
+
+
+================================================================================
+5. HOW ELEMENTS ARE FOUND (Locators)
+================================================================================
+
+Selenium finds things on the page using LOCATORS. Think of them as addresses.
+
+  LOCATOR TYPE        EXAMPLE                         HTML IT FINDS
+  ------------------- ------------------------------- -------------------------
+  By.id("username")   By.id("username")               <input id="username">
+  By.cssSelector()    By.cssSelector("button.submit")  <button class="submit">
+  By.xpath()          By.xpath("//button[text()='OK']") <button>OK</button>
+  By.className()      By.className("error-msg")       <div class="error-msg">
+  By.name()           By.name("email")                <input name="email">
+  By.tagName()        By.tagName("h1")                <h1>Hello</h1>
+  By.linkText()       By.linkText("Click here")       <a>Click here</a>
+
+
+HOW TO FIND LOCATORS YOURSELF:
+  1. Open Chrome
+  2. Go to the page you want to test
+  3. Right-click on the element (button, field, etc.)
+  4. Click "Inspect"
+  5. Look at the HTML in DevTools
+  6. Note the id, class, name, or text of that element
+  7. Use the appropriate By.xxx() method
+
+
+PRIORITY FOR CHOOSING LOCATORS (best to worst):
+  1. By.id()          - Most reliable, fastest
+  2. By.name()        - Good if id is not available
+  3. By.cssSelector() - Very flexible, good for complex selections
+  4. By.xpath()       - Most powerful but slowest, use as last resort
+
+
+================================================================================
+6. TEST REPORTS
+================================================================================
+
+After running "mvn test", reports are generated in TWO places:
+
+
+A) CONSOLE OUTPUT (what you see in terminal):
+---------------------------------------------
+  Tests run: 6, Failures: 2, Errors: 0, Skipped: 0
+
+
+B) HTML REPORTS in target/surefire-reports/:
+--------------------------------------------
+  FILE                      WHAT IT SHOWS
+  ------------------------- --------------------------------------------------
+  index.html                Full detailed report - open in browser, shows each
+                            test with pass/fail/skip, time taken, error traces
+  emailable-report.html     Simpler summary you can email to your team
+  testng-results.xml        Machine-readable results (for CI/CD tools)
+  testng-failed.xml         Contains ONLY failed tests - re-run just failures
+
+  To view: Open target/surefire-reports/index.html in your browser.
+
+
+C) RE-RUNNING ONLY FAILED TESTS:
+---------------------------------
+  After a run with failures, TestNG generates testng-failed.xml.
+  You can re-run just the failures with:
+
+    mvn test -DsuiteXmlFile=target/surefire-reports/testng-failed.xml
+
+
+================================================================================
+7. HOW TO WRITE YOUR OWN TEST (Step by Step)
+================================================================================
+
+Say you want to test the EMPLOYEE MASTER page. Here's exactly what to do:
+
+
+STEP 1: CREATE THE PAGE OBJECT
+-------------------------------
+Create: src/main/java/com/hrms/pages/EmployeeMasterPage.java
+
+  package com.hrms.pages;
+
+  import org.openqa.selenium.By;
+  import org.openqa.selenium.WebDriver;
+
+  public class EmployeeMasterPage extends BasePage {
+
+      // A: Inspect the Employee page in Chrome DevTools
+      //    Note down id/class/selector for each element
+      private final By addEmployeeBtn = By.xpath("//button[contains(text(),'Add Employee')]");
+      private final By nameField      = By.id("employeeName");
+      private final By emailField     = By.id("employeeEmail");
+      private final By submitBtn      = By.cssSelector("button[type='submit']");
+
+      public EmployeeMasterPage(WebDriver driver, int waitSeconds) {
+          super(driver, waitSeconds);
+      }
+
+      // B: How to get to this page
+      public void open(String baseUrl) {
+          driver.get(baseUrl + "/#/master-management/employee-master");
+      }
+
+      // C: Actions (what a user would DO on this page)
+      public void clickAddEmployee() {
+          waitClickable(addEmployeeBtn).click();
+          pause(1000);
+      }
+
+      public void fillForm(String name, String email) {
+          type(nameField, name);
+          type(emailField, email);
+      }
+
+      public void submitForm() {
+          jsClick(submitBtn);
+          pause(1500);
+      }
+
+      // D: Checks (how do we know it worked?)
+      public boolean isAddSuccessful() {
+          return isTextPresent("success") || isTextPresent("added");
+      }
+  }
+
+
+STEP 2: CREATE THE TEST CLASS
+------------------------------
+Create: src/test/java/com/hrms/tests/EmployeeMasterTest.java
+
+  package com.hrms.tests;
+
+  import com.hrms.base.BaseTest;
+  import com.hrms.config.ConfigReader;
+  import com.hrms.pages.EmployeeMasterPage;
+  import org.testng.Assert;
+  import org.testng.annotations.BeforeClass;
+  import org.testng.annotations.Test;
+
+  public class EmployeeMasterTest extends BaseTest {
+
+      private EmployeeMasterPage employeePage;
+
+      @BeforeClass
+      public void initPage() {
+          employeePage = new EmployeeMasterPage(driver, ConfigReader.getExplicitWait());
+      }
+
+      @Test(priority = 1, description = "Add a new employee")
+      public void testAddEmployee() throws InterruptedException {
+          employeePage.open(baseUrl);
+          employeePage.clickAddEmployee();
+          employeePage.fillForm("John Doe", "john@example.com");
+          employeePage.submitForm();
+
+          Assert.assertTrue(
+              employeePage.isAddSuccessful(),
+              "Success message should appear after adding employee"
+          );
+      }
+  }
+
+
+STEP 3: REGISTER IN testng.xml
+-------------------------------
+  Add this block inside the <suite> tag:
+
+  <test name="Employee Master Tests">
+      <classes>
+          <class name="com.hrms.tests.EmployeeMasterTest"/>
+      </classes>
+  </test>
+
+
+STEP 4: RUN
+-----------
+  mvn test                              -- runs everything
+  mvn test -Dtest=EmployeeMasterTest    -- runs only your new test
+
+
+================================================================================
+8. QUICK REFERENCE CHEAT SHEET
+================================================================================
+
+FINDING ELEMENTS:
+  By.id("username")                          Find by ID attribute
+  By.cssSelector("button.submit-btn")        Find by CSS selector
+  By.xpath("//button[contains(text(),'Save')]")  Find by text content
+  By.className("error")                      Find by class name
+  By.name("email")                           Find by name attribute
+
+ACTIONS:
+  waitClickable(locator).click()             Wait for element, then click
+  type(locator, "hello")                     Clear field, then type
+  jsClick(locator)                           JavaScript click (for tricky elements)
+  driver.get("https://...")                  Navigate to a URL
+  driver.findElement(locator).sendKeys("x")  Type without clearing first
+
+CHECKS / ASSERTIONS:
+  Assert.assertTrue(condition, "error msg")  Fail if condition is false
+  Assert.assertEquals(actual, expected)      Fail if values don't match
+  Assert.assertFalse(condition, "error msg") Fail if condition is true
+  isTextPresent("success")                   Check if text exists on page
+  driver.getCurrentUrl().contains("dashboard")  Check URL
+
+WAITS:
+  waitVisible(locator)                       Wait for element to be visible
+  waitClickable(locator)                     Wait for element to be clickable
+  pause(1000)                                Hard wait 1 second (avoid if possible)
+
+TESTNG ANNOTATIONS (execution order):
+  @BeforeSuite   -> Runs ONCE before all tests in the suite
+  @BeforeClass   -> Runs ONCE before all tests in THIS class
+  @BeforeMethod  -> Runs before EACH test method
+  @Test          -> The actual test
+  @AfterMethod   -> Runs after EACH test method
+  @AfterClass    -> Runs ONCE after all tests in THIS class
+  @AfterSuite    -> Runs ONCE after all tests in the suite
+
+MAVEN COMMANDS:
+  mvn test                            Run all tests
+  mvn test -Dtest=LoginTest           Run a specific test class
+  mvn clean test                      Clean old build, then run tests
+  mvn test -e                         Run with full error stack traces
+
+
+================================================================================
+9. SKILLS YOU NEED TO LEARN (Complete Roadmap)
+================================================================================
+
+Here is the learning path from beginner to solid automation tester,
+organized from most essential to advanced:
+
+
+-------------------------
+LEVEL 1: FOUNDATIONS
+(Learn these FIRST)
+-------------------------
+
+  1. JAVA BASICS
+     Why: All test code in this project is Java. You can't write tests without it.
+     What to learn:
+       - Variables, data types (String, int, boolean)
+       - If/else, for loops, while loops
+       - Methods (functions) - how to write and call them
+       - Classes and Objects (OOP basics)
+       - Inheritance (class X extends Y) - used everywhere in this project
+       - Access modifiers (public, private, protected, static)
+       - Exception handling (try/catch/throw)
+       - Collections (List, Map, Set)
+     Time: 2-3 weeks
+     Resources: "Java Tutorial for Beginners" on YouTube, W3Schools Java
+
+  2. HTML + CSS BASICS
+     Why: You need to read HTML to find locators (id, class, name, etc.)
+     What to learn:
+       - HTML tags: div, input, button, table, form, a, span
+       - HTML attributes: id, class, name, type, placeholder
+       - CSS selectors: .class, #id, tag, [attribute=value]
+       - Chrome DevTools: How to Inspect elements
+     Time: 1 week
+     Resources: W3Schools HTML/CSS, Chrome DevTools documentation
+
+  3. SELENIUM WEBDRIVER
+     Why: This is the core tool - it controls the browser.
+     What to learn:
+       - Setting up Selenium with Java
+       - Locator strategies: id, name, cssSelector, xpath, className
+       - Basic actions: click, sendKeys, getText, getAttribute
+       - Navigation: get(), navigate().to(), back(), forward()
+       - Waits: Implicit wait, Explicit wait (WebDriverWait) - VERY IMPORTANT
+       - Handling dropdowns (Select class)
+       - Handling alerts/popups
+       - Handling multiple windows/tabs
+       - Handling iframes
+       - Taking screenshots
+     Time: 2-3 weeks
+     Resources: Selenium official docs (selenium.dev), toolsqa.com
+
+  4. XPATH AND CSS SELECTORS (Deep Dive)
+     Why: Many elements don't have simple IDs. You need advanced selectors.
+     What to learn:
+       - XPath axes: parent, child, following-sibling, ancestor
+       - XPath functions: contains(), text(), starts-with()
+       - CSS pseudo-selectors: :first-child, :last-child, :nth-child()
+       - Relative XPath vs Absolute XPath
+       - How to write robust locators that don't break easily
+     Time: 1 week
+     Resources: Practice on any live website using Chrome DevTools console
+                Type: $x("//your-xpath-here") to test XPath
+                Type: $$("your-css-selector") to test CSS selectors
+
+
+-------------------------
+LEVEL 2: FRAMEWORKS
+(Learn these NEXT)
+-------------------------
+
+  5. TESTNG FRAMEWORK
+     Why: TestNG runs your tests and generates reports. Used in this project.
+     What to learn:
+       - Annotations: @Test, @BeforeSuite, @BeforeClass, @BeforeMethod, etc.
+       - Assertions: assertTrue, assertEquals, assertFalse
+       - Test priority and ordering
+       - Test groups and filtering
+       - testng.xml configuration
+       - Data providers (run same test with different data)
+       - Parallel execution
+       - Listeners (for custom reporting)
+       - Retry logic for flaky tests
+     Time: 1-2 weeks
+     Resources: TestNG official docs (testng.org)
+
+  6. MAVEN
+     Why: Maven manages dependencies and builds the project. Used in this project.
+     What to learn:
+       - What pom.xml is and how to read it
+       - How to add dependencies (libraries)
+       - Maven lifecycle: clean, compile, test, package
+       - Maven Surefire Plugin (runs your tests)
+       - Maven profiles (run different configs for different environments)
+       - Command line: mvn test, mvn clean test, mvn test -Dtest=XYZ
+     Time: 3-5 days
+     Resources: Maven in 5 Minutes (Apache docs)
+
+  7. PAGE OBJECT MODEL (POM) DESIGN PATTERN
+     Why: This is how professional test code is organized. Used in this project.
+     What to learn:
+       - Why Page Objects exist (separation of concerns)
+       - One class per page/screen
+       - Locators as private fields
+       - Actions as public methods
+       - BasePage for shared functionality
+       - Page Factory (alternative approach using @FindBy annotations)
+     Time: 1 week
+     Resources: Selenium official docs "Page Object Models" section
+
+
+-------------------------
+LEVEL 3: PROFESSIONAL SKILLS
+(Learn these to stand out)
+-------------------------
+
+  8. GIT & VERSION CONTROL
+     Why: Every team uses Git. You need to manage your test code.
+     What to learn:
+       - git init, clone, add, commit, push, pull
+       - Branching: create, switch, merge
+       - Pull Requests and code review
+       - .gitignore (what NOT to commit)
+       - Resolving merge conflicts
+     Time: 1 week
+     Resources: "Git Tutorial for Beginners" on YouTube
+
+  9. DATA-DRIVEN TESTING
+     Why: Run the same test with many different inputs.
+     What to learn:
+       - TestNG @DataProvider
+       - Reading test data from Excel (Apache POI library)
+       - Reading test data from CSV files
+       - Reading test data from JSON files
+       - config.properties for environment configuration
+     Time: 1 week
+
+  10. REPORTING
+      Why: Stakeholders need pretty reports, not console output.
+      What to learn:
+        - TestNG default reports (this project already has this)
+        - Extent Reports (beautiful HTML reports with screenshots)
+        - Allure Reports (modern, interactive reports)
+        - How to attach screenshots on test failure
+      Time: 3-5 days
+
+  11. LOGGING
+      Why: When tests fail, logs help you debug what happened.
+      What to learn:
+        - Log4j2 or SLF4J (logging frameworks)
+        - Log levels: DEBUG, INFO, WARN, ERROR
+        - Configuring log output (console + file)
+      Time: 2-3 days
+
+  12. CI/CD (Continuous Integration)
+      Why: Tests should run automatically, not just on your machine.
+      What to learn:
+        - Jenkins basics (most popular) OR GitHub Actions
+        - How to trigger tests on every code push
+        - How to schedule nightly test runs
+        - How to read CI/CD test reports
+      Time: 1 week
+
+
+-------------------------
+LEVEL 4: ADVANCED
+(Learn when comfortable)
+-------------------------
+
+  13. API TESTING (REST Assured)
+      Why: Not everything needs a browser. API tests are faster.
+      What to learn:
+        - What REST APIs are (GET, POST, PUT, DELETE)
+        - REST Assured library for Java
+        - Validating JSON responses
+        - Authentication in API tests
+      Time: 2 weeks
+
+  14. CUCUMBER / BDD (Behavior-Driven Development)
+      Why: Tests written in plain English that non-technical people can read.
+      What to learn:
+        - Gherkin syntax (Given/When/Then)
+        - Step definitions
+        - Feature files
+        - Integration with Selenium
+      Time: 1-2 weeks
+
+  15. DOCKER & SELENIUM GRID
+      Why: Run tests on multiple browsers simultaneously.
+      What to learn:
+        - Docker basics
+        - Selenium Grid setup
+        - Running tests in parallel on different browsers
+        - Headless browser testing (no visible Chrome window)
+      Time: 1 week
+
+  16. PERFORMANCE TESTING BASICS
+      Why: Sometimes you need to check if the site is fast enough.
+      What to learn:
+        - JMeter basics
+        - Load testing concepts
+      Time: 1 week
+
+
+=======================================
+SUGGESTED LEARNING ORDER (Timeline)
+=======================================
+
+  Month 1: Java Basics + HTML/CSS + Selenium WebDriver
+  Month 2: XPath/CSS Selectors + TestNG + Maven
+  Month 3: Page Object Model + Git + Data-Driven Testing
+  Month 4: Reporting + Logging + CI/CD
+  Month 5+: API Testing + Cucumber + Docker + Advanced topics
+
+
+=======================================
+TOOLS TO INSTALL ON YOUR MACHINE
+=======================================
+
+  Already Installed:
+    [x] Java (JDK 21)
+    [x] Maven (3.9.14)
+    [x] Google Chrome
+
+  Recommended to Install:
+    [ ] Git (https://git-scm.com/)
+    [ ] VS Code or IntelliJ IDEA (IDE for writing code)
+    [ ] Postman (for exploring APIs before writing API tests)
+
+
+=======================================
+DAILY PRACTICE TIPS
+=======================================
+
+  1. Pick any public website (e.g., demo shopping sites, demo banking sites)
+  2. Inspect 5 elements daily using Chrome DevTools
+  3. Write one small test per day
+  4. When a test fails, READ THE ERROR MESSAGE carefully
+     - "NoSuchElement" = Your locator is wrong, inspect the HTML again
+     - "TimeoutException" = Element took too long to appear, increase wait
+     - "StaleElementReference" = Page refreshed, re-find the element
+     - "NullPointerException" = Something wasn't initialized, check setup
+  5. Run tests, read reports, fix failures, repeat
+
+
+================================================================================
+                              END OF GUIDE
+================================================================================

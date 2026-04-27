@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<!--
+    Run all tests  : mvn test
+    Run one test   : mvn test -Dtest=LoginTest
+-->
+<suite name="HRMS Test Suite" verbose="1" thread-count="1">
+
+    <test name="Login Tests">
+        <classes>
+            <class name="com.hrms.tests.LoginTest"/>
+        </classes>
+    </test>
+
+    <test name="Branch Master Tests">
+        <classes>
+            <class name="com.hrms.tests.BranchMasterTest"/>
+        </classes>
+    </test>
+
+    <test name="Company Master Tests">
+        <classes>
+            <class name="com.hrms.tests.CompanyMasterTest"/>
+        </classes>
+    </test>
+    <test name="Interview Master Tests">
+        <classes>
+            <class name="com.hrms.tests.InterviewModeTest"/>
+        </classes>
+    </test>
+    
+ <test name="Interview Round Master Tests">
+        <classes>
+            <class name="com.hrms.tests.InterviewRoundMasterTest"/>
+        </classes>
+    </test>
+     <test name="Designation master Tests">
+        <classes>
+            <class name="com.hrms.tests.DesignationmasterTest"/>
+        </classes>
+    </test>
+
+</suite>
