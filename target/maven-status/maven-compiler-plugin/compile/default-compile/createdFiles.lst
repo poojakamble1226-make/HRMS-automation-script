@@ -1,5 +1,10 @@
 com\hrms\pages\BasePage.class
 com\hrms\driver\DriverManager.class
+com\hrms\pages\LoginPage.class
+com\hrms\utils\NetworkUtils.class
 com\hrms\config\ConfigReader.class
+com\hrms\pages\InterviewModePage.class
+com\hrms\pages\InterviewRoundmasterpage.class
 com\hrms\pages\CompanyMasterPage.class
 com\hrms\pages\BranchMasterPage.class
+com\hrms\pages\DesignationmasterPage.class

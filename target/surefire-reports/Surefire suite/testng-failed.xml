@@ -3,15 +3,14 @@
 <suite name="Failed suite [Surefire suite]" verbose="0">
   <test thread-count="5" name="Surefire test(failed)" verbose="0">
     <classes>
-      <class name="com.hrms.tests.InterviewModeTest">
+      <class name="com.hrms.tests.DesignationmasterTest">
         <methods>
-          <include name="suiteTearDown"/>
           <include name="suiteSetUp"/>
+          <include name="suiteTearDown"/>
+          <include name="testAdddesignation"/>
           <include name="loginAndInitPage"/>
-          <include name="testBlankInterviewModeValidation"/>
-          <include name="testAddInterviewMode"/>
         </methods>
-      </class> <!-- com.hrms.tests.InterviewModeTest -->
+      </class> <!-- com.hrms.tests.DesignationmasterTest -->
     </classes>
   </test> <!-- Surefire test(failed) -->
 </suite> <!-- Failed suite [Surefire suite] -->

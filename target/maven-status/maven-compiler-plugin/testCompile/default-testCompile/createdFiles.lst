@@ -1,0 +1,7 @@
+com\hrms\tests\InterviewModeTest.class
+com\hrms\tests\InterviewRoundMasterTest.class
+com\hrms\tests\LoginTest.class
+com\hrms\base\BaseTest.class
+com\hrms\tests\BranchMasterTest.class
+com\hrms\tests\DesignationmasterTest.class
+com\hrms\tests\CompanyMasterTest.class

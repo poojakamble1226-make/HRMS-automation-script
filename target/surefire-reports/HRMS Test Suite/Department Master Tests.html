@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>TestNG:  Company Master Tests</title>
+<title>TestNG:  Department Master Tests</title>
 <link href="../testng.css" rel="stylesheet" type="text/css" />
 <link href="../my-testng.css" rel="stylesheet" type="text/css" />
 
@@ -53,13 +53,13 @@ function toggleAllBoxes() {
 
 </head>
 <body>
-<h2 align='center'>Company Master Tests</h2><table border='1' align="center">
+<h2 align='center'>Department Master Tests</h2><table border='1' align="center">
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>2/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Apr 28 16:48:24 IST 2026</td>
+<td>Started on:</td><td>Tue Apr 28 16:49:18 IST 2026</td>
 </tr>
-<tr><td>Total time:</td><td>14 seconds (14066 ms)</td>
+<tr><td>Total time:</td><td>32 seconds (32045 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,16 +76,16 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.hrms.tests.CompanyMasterTest.testDuplicateCompanyValidation()'><b>testDuplicateCompanyValidation</b><br>Test class: com.hrms.tests.CompanyMasterTest<br>Test method: Adding a company that already exists should show a duplicate error</td>
-<td><div><pre>java.lang.AssertionError: Duplicate-company error should appear expected [true] but found [false]
-	at com.hrms.tests.CompanyMasterTest.testDuplicateCompanyValidation(CompanyMasterTest.java:61)
+<td title='com.hrms.tests.DepartmentmasterTest.testDuplicateDepartmentValidation()'><b>testDuplicateDepartmentValidation</b><br>Test class: com.hrms.tests.DepartmentmasterTest<br>Test method: Adding a department that already exists should show a duplicate error</td>
+<td><div><pre>java.lang.AssertionError: Duplicate-Department error should appear expected [true] but found [false]
+	at com.hrms.tests.DepartmentmasterTest.testDuplicateDepartmentValidation(DepartmentmasterTest.java:58)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 34 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1510009630", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1510009630'><pre>java.lang.AssertionError: Duplicate-company error should appear expected [true] but found [false]
+... Removed 34 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace294505405", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace294505405'><pre>java.lang.AssertionError: Duplicate-Department error should appear expected [true] but found [false]
 	at org.testng.Assert.fail(Assert.java:111)
 	at org.testng.Assert.failNotEquals(Assert.java:1578)
 	at org.testng.Assert.assertTrue(Assert.java:57)
-	at com.hrms.tests.CompanyMasterTest.testDuplicateCompanyValidation(CompanyMasterTest.java:61)
+	at com.hrms.tests.DepartmentmasterTest.testDuplicateDepartmentValidation(DepartmentmasterTest.java:58)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -120,7 +120,7 @@ function toggleAllBoxes() {
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
 </pre></div></td>
 <td>6</td>
-<td>com.hrms.tests.CompanyMasterTest@72967906</td></tr>
+<td>com.hrms.tests.DepartmentmasterTest@35d019a3</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -131,15 +131,15 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.hrms.tests.CompanyMasterTest.testAddCompany()'><b>testAddCompany</b><br>Test class: com.hrms.tests.CompanyMasterTest<br>Test method: Adding a new company with valid data should succeed</td>
+<td title='com.hrms.tests.DepartmentmasterTest.testDeleteDepartment()'><b>testDeleteDepartment</b><br>Test class: com.hrms.tests.DepartmentmasterTest<br>Test method: Deleting the last department in the list should complete without error</td>
 <td></td>
-<td>5</td>
-<td>com.hrms.tests.CompanyMasterTest@72967906</td></tr>
+<td>20</td>
+<td>com.hrms.tests.DepartmentmasterTest@35d019a3</td></tr>
 <tr>
-<td title='com.hrms.tests.CompanyMasterTest.testDeleteCompany()'><b>testDeleteCompany</b><br>Test class: com.hrms.tests.CompanyMasterTest<br>Test method: Deleting the last company in the list should complete without error</td>
+<td title='com.hrms.tests.DepartmentmasterTest.testAddDepartment()'><b>testAddDepartment</b><br>Test class: com.hrms.tests.DepartmentmasterTest<br>Test method: Adding a new department with valid data should succeed</td>
 <td></td>
-<td>1</td>
-<td>com.hrms.tests.CompanyMasterTest@72967906</td></tr>
+<td>4</td>
+<td>com.hrms.tests.DepartmentmasterTest@35d019a3</td></tr>
 </table><p>
 </body>
 </html>

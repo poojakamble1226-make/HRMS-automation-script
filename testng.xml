@@ -41,4 +41,10 @@
         </classes>
     </test>
 
+    <test name="Department Master Tests">
+        <classes>
+            <class name="com.hrms.tests.DepartmentmasterTest"/>
+        </classes>
+    </test>
+
 </suite>

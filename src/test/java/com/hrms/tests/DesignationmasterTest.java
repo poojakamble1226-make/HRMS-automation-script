@@ -58,10 +58,10 @@ public class DesignationmasterTest extends BaseTest {
         Designationpage.fillDesignationForm("Qa Annayst.");
         Designationpage.submitForm();
 
-        // Assert.assertTrue(
-        //     Designationpage.isDuplicateErrorShown(),
-        //     "Duplicate-Designation error should appear"
-        // );
+        Assert.assertTrue(
+            Designationpage.isDuplicateErrorShown(),
+            "Duplicate-Designation error should appear"
+        );
         System.out.println("PASS: Duplicate Validation");
     }
 
