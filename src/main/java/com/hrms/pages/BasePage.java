@@ -71,6 +71,60 @@ public class BasePage {
     protected boolean isTextPresent(String text) {
         return driver.getPageSource().toLowerCase().contains(text.toLowerCase());
     }
+
+    /**
+     * Returns true if the page shows any indicator of a duplicate / save-failure error.
+     * Checks (in order):
+     *   1. Common duplicate-related keywords anywhere in the page source.
+     *   2. A visible PrimeNG error / warn toast.
+     *   3. A visible Bootstrap-style danger alert.
+     * Prints the visible toast / alert text when none match, so future failing runs
+     * surface the real wording for further refinement.
+     */
+    protected boolean hasDuplicateOrErrorIndicator() {
+        pause(1500); // let the toast render
+
+        String[] keywords = {
+            "exists", "duplicate", "already", "same name", "taken",
+            "in use", "not available", "name available", "conflict",
+            "validation failed", "cannot save", "save failed"
+        };
+        for (String kw : keywords) {
+            if (isTextPresent(kw)) return true;
+        }
+
+        By errorToast = By.cssSelector(
+            ".p-toast-message-error, .p-toast-message-warn, " +
+            ".alert-danger, .toast-error, .ng-trigger-toastAnimation"
+        );
+        java.util.List<WebElement> toasts = driver.findElements(errorToast);
+        for (WebElement t : toasts) {
+            try {
+                if (t.isDisplayed()) {
+                    String text = t.getText();
+                    System.out.println("DEBUG: duplicate-error toast text => '" + text + "'");
+                    if (text != null && !text.trim().isEmpty()) return true;
+                }
+            } catch (Exception ignored) {}
+        }
+
+        // Last-resort debug: dump any visible toast/alert text so we can refine the keyword list.
+        java.util.List<WebElement> anyToast = driver.findElements(By.cssSelector(
+            ".p-toast-message, .p-toast-detail, .p-toast-summary, .alert, .text-danger, .invalid-feedback"
+        ));
+        StringBuilder seen = new StringBuilder();
+        for (WebElement t : anyToast) {
+            try {
+                if (t.isDisplayed()) {
+                    seen.append('[').append(t.getText()).append("] ");
+                }
+            } catch (Exception ignored) {}
+        }
+        if (seen.length() > 0) {
+            System.out.println("DEBUG: visible alert/toast text after submit => " + seen);
+        }
+        return false;
+    }
     // ── Assertions helpers ───────────────────────────────────────────────────
 
 protected boolean isDisplayed(By locator) {

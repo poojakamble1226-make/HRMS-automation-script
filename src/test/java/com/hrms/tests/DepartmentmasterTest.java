@@ -34,8 +34,8 @@ public class DepartmentmasterTest extends BaseTest {
 
         departmentPage.clickAddDepartment();
         departmentPage.fillDepartmentForm(
-            "TestDept_" + System.currentTimeMillis(),
-            "Auto-created by Selenium suite"
+            "ITDep_" + System.currentTimeMillis(),
+            "Dealmoney"
         );
         departmentPage.submitForm();
 
@@ -49,10 +49,18 @@ public class DepartmentmasterTest extends BaseTest {
     @Test(priority = 2, description = "Adding a department that already exists should show a duplicate error")
     public void testDuplicateDepartmentValidation() throws InterruptedException {
         System.out.println("\n---------- DEPARTMENT MASTER: Duplicate Validation ----------");
-        departmentPage.open(baseUrl);
+        String dupName = "DupDept_" + System.currentTimeMillis();
 
+        // First insert: should succeed and guarantees the name now exists.
+        departmentPage.open(baseUrl);
         departmentPage.clickAddDepartment();
-        departmentPage.fillDepartmentForm("HR", "Duplicate test");
+        departmentPage.fillDepartmentForm(dupName, "Dealmoney");
+        departmentPage.submitForm();
+
+        // Second insert with the same name + same company: should trigger duplicate validation.
+        departmentPage.open(baseUrl);
+        departmentPage.clickAddDepartment();
+        departmentPage.fillDepartmentForm(dupName, "Dealmoney");
         departmentPage.submitForm();
 
         Assert.assertTrue(

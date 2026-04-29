@@ -3,14 +3,14 @@
 <suite name="Failed suite [Surefire suite]" verbose="0">
   <test thread-count="5" name="Surefire test(failed)" verbose="0">
     <classes>
-      <class name="com.hrms.tests.DesignationmasterTest">
+      <class name="com.hrms.tests.DivisionmasterTest">
         <methods>
-          <include name="suiteSetUp"/>
+          <include name="testDuplicateDivisionValidation"/>
           <include name="suiteTearDown"/>
-          <include name="testAdddesignation"/>
+          <include name="suiteSetUp"/>
           <include name="loginAndInitPage"/>
         </methods>
-      </class> <!-- com.hrms.tests.DesignationmasterTest -->
+      </class> <!-- com.hrms.tests.DivisionmasterTest -->
     </classes>
   </test> <!-- Surefire test(failed) -->
 </suite> <!-- Failed suite [Surefire suite] -->

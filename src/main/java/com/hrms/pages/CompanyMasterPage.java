@@ -80,12 +80,6 @@ public class CompanyMasterPage extends BasePage {
     }
 
     public boolean isDuplicateErrorShown() {
-        // Allow a brief moment for the toast/error to render after submit.
-        pause(1500);
-        return isTextPresent("exists")
-            || isTextPresent("duplicate")
-            || isTextPresent("already")
-            || isTextPresent("same name")
-            || isTextPresent("taken");
+        return hasDuplicateOrErrorIndicator();
     }
 }

@@ -37,4 +37,16 @@
       </class> <!-- com.hrms.tests.DepartmentmasterTest -->
     </classes>
   </test> <!-- Department Master Tests(failed) -->
+  <test thread-count="1" name="Division Master Tests(failed)" verbose="0">
+    <classes>
+      <class name="com.hrms.tests.DivisionmasterTest">
+        <methods>
+          <include name="testDuplicateDivisionValidation"/>
+          <include name="suiteSetUp"/>
+          <include name="suiteTearDown"/>
+          <include name="loginAndInitPage"/>
+        </methods>
+      </class> <!-- com.hrms.tests.DivisionmasterTest -->
+    </classes>
+  </test> <!-- Division Master Tests(failed) -->
 </suite> <!-- Failed suite [HRMS Test Suite] -->

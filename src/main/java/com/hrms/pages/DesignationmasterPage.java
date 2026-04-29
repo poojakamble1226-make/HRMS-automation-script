@@ -102,12 +102,7 @@ public class DesignationmasterPage extends BasePage {
     }
 
     public boolean isDuplicateErrorShown() {
-        pause(1500);
-        return isTextPresent("exists")
-            || isTextPresent("duplicate")
-            || isTextPresent("already")
-            || isTextPresent("same name")
-            || isTextPresent("taken");
+        return hasDuplicateOrErrorIndicator();
     }
 
     // ── Delete ───────────────────────────────────────────────

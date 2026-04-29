@@ -1,40 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite thread-count="1" name="Failed suite [HRMS Test Suite]" guice-stage="DEVELOPMENT" verbose="0">
-  <test thread-count="1" name="Company Master Tests(failed)" verbose="0">
+<suite name="Failed suite [Surefire suite]" verbose="0">
+  <test thread-count="5" name="Surefire test(failed)" verbose="0">
     <classes>
-      <class name="com.hrms.tests.CompanyMasterTest">
+      <class name="com.hrms.tests.DivisionmasterTest">
         <methods>
-          <include name="suiteSetUp"/>
-          <include name="suiteTearDown"/>
-          <include name="testDuplicateCompanyValidation"/>
-          <include name="loginAndInitPage"/>
-        </methods>
-      </class> <!-- com.hrms.tests.CompanyMasterTest -->
-    </classes>
-  </test> <!-- Company Master Tests(failed) -->
-  <test thread-count="1" name="Designation master Tests(failed)" verbose="0">
-    <classes>
-      <class name="com.hrms.tests.DesignationmasterTest">
-        <methods>
+          <include name="testDuplicateDivisionValidation"/>
           <include name="suiteTearDown"/>
           <include name="suiteSetUp"/>
           <include name="loginAndInitPage"/>
-          <include name="testDuplicateDesignationValidation"/>
         </methods>
-      </class> <!-- com.hrms.tests.DesignationmasterTest -->
+      </class> <!-- com.hrms.tests.DivisionmasterTest -->
     </classes>
-  </test> <!-- Designation master Tests(failed) -->
-  <test thread-count="1" name="Department Master Tests(failed)" verbose="0">
-    <classes>
-      <class name="com.hrms.tests.DepartmentmasterTest">
-        <methods>
-          <include name="suiteSetUp"/>
-          <include name="suiteTearDown"/>
-          <include name="loginAndInitPage"/>
-          <include name="testDuplicateDepartmentValidation"/>
-        </methods>
-      </class> <!-- com.hrms.tests.DepartmentmasterTest -->
-    </classes>
-  </test> <!-- Department Master Tests(failed) -->
-</suite> <!-- Failed suite [HRMS Test Suite] -->
+  </test> <!-- Surefire test(failed) -->
+</suite> <!-- Failed suite [Surefire suite] -->

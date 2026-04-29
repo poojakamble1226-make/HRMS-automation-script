@@ -52,10 +52,18 @@ public class CompanyMasterTest extends BaseTest {
     @Test(priority = 2, description = "Adding a company that already exists should show a duplicate error")
     public void testDuplicateCompanyValidation() throws InterruptedException {
         System.out.println("\n---------- COMPANY MASTER: Duplicate Validation ----------");
-        companyPage.open(baseUrl);
+        String dupName = "DupCo_" + System.currentTimeMillis();
 
+        // First insert: should succeed and guarantees the name now exists.
+        companyPage.open(baseUrl);
         companyPage.clickAddCompany();
-        companyPage.fillCompanyForm("Demo Solutions Pvt. Ltd.", null);
+        companyPage.fillCompanyForm(dupName, "Footer");
+        companyPage.submitForm();
+
+        // Second insert with the same name: should trigger duplicate validation.
+        companyPage.open(baseUrl);
+        companyPage.clickAddCompany();
+        companyPage.fillCompanyForm(dupName, "Footer");
         companyPage.submitForm();
 
         Assert.assertTrue(

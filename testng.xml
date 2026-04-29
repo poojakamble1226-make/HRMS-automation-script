@@ -47,4 +47,16 @@
         </classes>
     </test>
 
+    <test name="Division Master Tests">
+        <classes>
+            <class name="com.hrms.tests.DivisionmasterTest"/>
+        </classes>
+    </test>
+
+    <test name="Grade Master Tests">
+        <classes>
+            <class name="com.hrms.tests.GrademasterTest"/>
+        </classes>
+    </test>
+
 </suite>

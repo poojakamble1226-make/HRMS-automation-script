@@ -52,10 +52,18 @@ public class DesignationmasterTest extends BaseTest {
     @Test(priority = 2, description = "Adding a Designation that already exists should show a duplicate error")
     public void testDuplicateDesignationValidation() throws InterruptedException {
         System.out.println("\n---------- DESIGNATION MASTER: Duplicate Validation ----------");
-       Designationpage.open(baseUrl);
+        String dupName = "DupDes_" + System.currentTimeMillis();
 
-       Designationpage.clickAddDesignation();
-        Designationpage.fillDesignationForm("Qa Annayst.");
+        // First insert: should succeed and guarantees the name now exists.
+        Designationpage.open(baseUrl);
+        Designationpage.clickAddDesignation();
+        Designationpage.fillDesignationForm(dupName);
+        Designationpage.submitForm();
+
+        // Second insert with the same name + same company: should trigger duplicate validation.
+        Designationpage.open(baseUrl);
+        Designationpage.clickAddDesignation();
+        Designationpage.fillDesignationForm(dupName);
         Designationpage.submitForm();
 
         Assert.assertTrue(
