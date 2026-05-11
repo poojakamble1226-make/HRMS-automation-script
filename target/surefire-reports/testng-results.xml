@@ -1,185 +1,257 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="24" passed="24" failed="0" skipped="0">
+<testng-results ignored="0" total="36" passed="36" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-04-29T15:47:04 IST" name="HRMS Test Suite" finished-at="2026-04-29T15:50:28 IST" duration-ms="203882">
+  <suite started-at="2026-05-11T13:30:16 IST" name="HRMS Test Suite" finished-at="2026-05-11T13:36:13 IST" duration-ms="356339">
     <groups>
     </groups>
-    <test started-at="2026-04-29T15:47:04 IST" name="Login Tests" finished-at="2026-04-29T15:47:26 IST" duration-ms="22503">
+    <test started-at="2026-05-11T13:30:16 IST" name="Login Tests" finished-at="2026-05-11T13:30:25 IST" duration-ms="8917">
       <class name="com.hrms.tests.LoginTest">
-        <test-method is-config="true" signature="initPage()[pri:0, instance:com.hrms.tests.LoginTest@1a451d4d]" started-at="2026-04-29T15:47:04 IST" name="initPage" finished-at="2026-04-29T15:47:05 IST" duration-ms="1121" status="PASS">
+        <test-method is-config="true" signature="initPage()[pri:0, instance:com.hrms.tests.LoginTest@1a451d4d]" started-at="2026-05-11T13:30:17 IST" name="initPage" finished-at="2026-05-11T13:30:17 IST" duration-ms="13" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initPage -->
-        <test-method signature="testValidLogin()[pri:1, instance:com.hrms.tests.LoginTest@1a451d4d]" started-at="2026-04-29T15:47:07 IST" name="testValidLogin" description="Valid credentials should redirect to the dashboard" finished-at="2026-04-29T15:47:26 IST" duration-ms="19101" status="PASS">
+        <test-method signature="testValidLogin()[pri:1, instance:com.hrms.tests.LoginTest@1a451d4d]" started-at="2026-05-11T13:30:17 IST" name="testValidLogin" description="Valid credentials should redirect to the dashboard" finished-at="2026-05-11T13:30:25 IST" duration-ms="8053" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidLogin -->
       </class> <!-- com.hrms.tests.LoginTest -->
     </test> <!-- Login Tests -->
-    <test started-at="2026-04-29T15:47:29 IST" name="Branch Master Tests" finished-at="2026-04-29T15:47:53 IST" duration-ms="24153">
+    <test started-at="2026-05-11T13:30:26 IST" name="Branch Master Tests" finished-at="2026-05-11T13:31:28 IST" duration-ms="61616">
       <class name="com.hrms.tests.BranchMasterTest">
-        <test-method is-config="true" signature="loginAndInitPage()[pri:0, instance:com.hrms.tests.BranchMasterTest@79e2c065]" started-at="2026-04-29T15:47:29 IST" name="loginAndInitPage" finished-at="2026-04-29T15:47:29 IST" duration-ms="132" status="PASS">
+        <test-method is-config="true" signature="loginAndInitPage()[pri:0, instance:com.hrms.tests.BranchMasterTest@79e2c065]" started-at="2026-05-11T13:30:26 IST" name="loginAndInitPage" finished-at="2026-05-11T13:30:26 IST" duration-ms="27" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginAndInitPage -->
-        <test-method signature="testEmptyBranchValidation()[pri:1, instance:com.hrms.tests.BranchMasterTest@79e2c065]" started-at="2026-04-29T15:47:29 IST" name="testEmptyBranchValidation" description="Submitting an empty branch form should show required-field errors" finished-at="2026-04-29T15:47:33 IST" duration-ms="3855" status="PASS">
+        <test-method signature="testEmptyBranchValidation()[pri:1, instance:com.hrms.tests.BranchMasterTest@79e2c065]" started-at="2026-05-11T13:30:26 IST" name="testEmptyBranchValidation" description="Submitting an empty branch form should show required-field errors" finished-at="2026-05-11T13:30:30 IST" duration-ms="3825" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testEmptyBranchValidation -->
-        <test-method signature="testAddBranch()[pri:2, instance:com.hrms.tests.BranchMasterTest@79e2c065]" started-at="2026-04-29T15:47:33 IST" name="testAddBranch" description="A fully filled branch form should submit without errors" finished-at="2026-04-29T15:47:39 IST" duration-ms="5405" status="PASS">
+        <test-method signature="testAddBranch()[pri:2, instance:com.hrms.tests.BranchMasterTest@79e2c065]" started-at="2026-05-11T13:30:30 IST" name="testAddBranch" description="A fully filled branch form should submit without errors" finished-at="2026-05-11T13:30:36 IST" duration-ms="5441" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testAddBranch -->
-        <test-method signature="testBranchNameWithNumbers()[pri:3, instance:com.hrms.tests.BranchMasterTest@79e2c065]" started-at="2026-04-29T15:47:39 IST" name="testBranchNameWithNumbers" description="Branch name should not accept numeric values" finished-at="2026-04-29T15:47:45 IST" duration-ms="6854" status="PASS">
+        <test-method signature="testBranchNameWithNumbers()[pri:3, instance:com.hrms.tests.BranchMasterTest@79e2c065]" started-at="2026-05-11T13:30:36 IST" name="testBranchNameWithNumbers" description="Branch name should not accept numeric values" finished-at="2026-05-11T13:31:17 IST" duration-ms="41587" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testBranchNameWithNumbers -->
-        <test-method signature="testInvalidPhoneNumber()[pri:4, instance:com.hrms.tests.BranchMasterTest@79e2c065]" started-at="2026-04-29T15:47:45 IST" name="testInvalidPhoneNumber" description="Phone number should be exactly 10 digits" finished-at="2026-04-29T15:47:53 IST" duration-ms="7891" status="PASS">
+        <test-method signature="testInvalidPhoneNumber()[pri:4, instance:com.hrms.tests.BranchMasterTest@79e2c065]" started-at="2026-05-11T13:31:17 IST" name="testInvalidPhoneNumber" description="Phone number should be exactly 10 digits" finished-at="2026-05-11T13:31:28 IST" duration-ms="10700" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testInvalidPhoneNumber -->
       </class> <!-- com.hrms.tests.BranchMasterTest -->
     </test> <!-- Branch Master Tests -->
-    <test started-at="2026-04-29T15:47:53 IST" name="Company Master Tests" finished-at="2026-04-29T15:48:11 IST" duration-ms="17382">
+    <test started-at="2026-05-11T13:31:28 IST" name="Company Master Tests" finished-at="2026-05-11T13:31:45 IST" duration-ms="17146">
       <class name="com.hrms.tests.CompanyMasterTest">
-        <test-method is-config="true" signature="loginAndInitPage()[pri:0, instance:com.hrms.tests.CompanyMasterTest@72967906]" started-at="2026-04-29T15:47:53 IST" name="loginAndInitPage" finished-at="2026-04-29T15:47:54 IST" duration-ms="98" status="PASS">
+        <test-method is-config="true" signature="loginAndInitPage()[pri:0, instance:com.hrms.tests.CompanyMasterTest@72967906]" started-at="2026-05-11T13:31:28 IST" name="loginAndInitPage" finished-at="2026-05-11T13:31:28 IST" duration-ms="30" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginAndInitPage -->
-        <test-method signature="testAddCompany()[pri:1, instance:com.hrms.tests.CompanyMasterTest@72967906]" started-at="2026-04-29T15:47:54 IST" name="testAddCompany" description="Adding a new company with valid data should succeed" finished-at="2026-04-29T15:47:58 IST" duration-ms="4929" status="PASS">
+        <test-method signature="testAddCompany()[pri:1, instance:com.hrms.tests.CompanyMasterTest@72967906]" started-at="2026-05-11T13:31:28 IST" name="testAddCompany" description="Adding a new company with valid data should succeed" finished-at="2026-05-11T13:31:33 IST" duration-ms="4611" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testAddCompany -->
-        <test-method signature="testDuplicateCompanyValidation()[pri:2, instance:com.hrms.tests.CompanyMasterTest@72967906]" started-at="2026-04-29T15:47:58 IST" name="testDuplicateCompanyValidation" description="Adding a company that already exists should show a duplicate error" finished-at="2026-04-29T15:48:09 IST" duration-ms="10671" status="PASS">
+        <test-method signature="testDuplicateCompanyValidation()[pri:2, instance:com.hrms.tests.CompanyMasterTest@72967906]" started-at="2026-05-11T13:31:33 IST" name="testDuplicateCompanyValidation" description="Adding a company that already exists should show a duplicate error" finished-at="2026-05-11T13:31:44 IST" duration-ms="10941" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testDuplicateCompanyValidation -->
-        <test-method signature="testDeleteCompany()[pri:3, instance:com.hrms.tests.CompanyMasterTest@72967906]" started-at="2026-04-29T15:48:09 IST" name="testDeleteCompany" description="Deleting the last company in the list should complete without error" finished-at="2026-04-29T15:48:11 IST" duration-ms="1683" status="PASS">
+        <test-method signature="testDeleteCompany()[pri:3, instance:com.hrms.tests.CompanyMasterTest@72967906]" started-at="2026-05-11T13:31:44 IST" name="testDeleteCompany" description="Deleting the last company in the list should complete without error" finished-at="2026-05-11T13:31:45 IST" duration-ms="1563" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testDeleteCompany -->
       </class> <!-- com.hrms.tests.CompanyMasterTest -->
     </test> <!-- Company Master Tests -->
-    <test started-at="2026-04-29T15:48:11 IST" name="Interview Master Tests" finished-at="2026-04-29T15:48:24 IST" duration-ms="13498">
+    <test started-at="2026-05-11T13:31:46 IST" name="Interview Master Tests" finished-at="2026-05-11T13:32:00 IST" duration-ms="14372">
       <class name="com.hrms.tests.InterviewModeTest">
-        <test-method is-config="true" signature="loginAndInitPage()[pri:0, instance:com.hrms.tests.InterviewModeTest@55183b20]" started-at="2026-04-29T15:48:11 IST" name="loginAndInitPage" finished-at="2026-04-29T15:48:12 IST" duration-ms="919" status="PASS">
+        <test-method is-config="true" signature="loginAndInitPage()[pri:0, instance:com.hrms.tests.InterviewModeTest@55183b20]" started-at="2026-05-11T13:31:46 IST" name="loginAndInitPage" finished-at="2026-05-11T13:31:47 IST" duration-ms="1292" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginAndInitPage -->
-        <test-method signature="testAddInterviewMode()[pri:1, instance:com.hrms.tests.InterviewModeTest@55183b20]" started-at="2026-04-29T15:48:12 IST" name="testAddInterviewMode" description="Adding a new interview mode with valid data should succeed" finished-at="2026-04-29T15:48:18 IST" duration-ms="6129" status="PASS">
+        <test-method signature="testAddInterviewMode()[pri:1, instance:com.hrms.tests.InterviewModeTest@55183b20]" started-at="2026-05-11T13:31:47 IST" name="testAddInterviewMode" description="Adding a new interview mode with valid data should succeed" finished-at="2026-05-11T13:31:54 IST" duration-ms="6682" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testAddInterviewMode -->
-        <test-method signature="testBlankInterviewModeValidation()[pri:2, instance:com.hrms.tests.InterviewModeTest@55183b20]" started-at="2026-04-29T15:48:18 IST" name="testBlankInterviewModeValidation" description="Verify blank validation for interview mode form" finished-at="2026-04-29T15:48:24 IST" duration-ms="6450" status="PASS">
+        <test-method signature="testBlankInterviewModeValidation()[pri:2, instance:com.hrms.tests.InterviewModeTest@55183b20]" started-at="2026-05-11T13:31:54 IST" name="testBlankInterviewModeValidation" description="Verify blank validation for interview mode form" finished-at="2026-05-11T13:32:00 IST" duration-ms="6398" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testBlankInterviewModeValidation -->
       </class> <!-- com.hrms.tests.InterviewModeTest -->
     </test> <!-- Interview Master Tests -->
-    <test started-at="2026-04-29T15:48:24 IST" name="Interview Round Master Tests" finished-at="2026-04-29T15:48:39 IST" duration-ms="14292">
+    <test started-at="2026-05-11T13:32:00 IST" name="Interview Round Master Tests" finished-at="2026-05-11T13:32:14 IST" duration-ms="13544">
       <class name="com.hrms.tests.InterviewRoundMasterTest">
-        <test-method is-config="true" signature="loginAndInitPage()[pri:0, instance:com.hrms.tests.InterviewRoundMasterTest@293a5bf6]" started-at="2026-04-29T15:48:24 IST" name="loginAndInitPage" finished-at="2026-04-29T15:48:25 IST" duration-ms="910" status="PASS">
+        <test-method is-config="true" signature="loginAndInitPage()[pri:0, instance:com.hrms.tests.InterviewRoundMasterTest@293a5bf6]" started-at="2026-05-11T13:32:00 IST" name="loginAndInitPage" finished-at="2026-05-11T13:32:01 IST" duration-ms="753" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginAndInitPage -->
-        <test-method signature="testAddInterviewRound()[pri:1, instance:com.hrms.tests.InterviewRoundMasterTest@293a5bf6]" started-at="2026-04-29T15:48:25 IST" name="testAddInterviewRound" description="Adding a new interview timeline with valid data should succeed" finished-at="2026-04-29T15:48:32 IST" duration-ms="6838" status="PASS">
+        <test-method signature="testAddInterviewRound()[pri:1, instance:com.hrms.tests.InterviewRoundMasterTest@293a5bf6]" started-at="2026-05-11T13:32:01 IST" name="testAddInterviewRound" description="Adding a new interview timeline with valid data should succeed" finished-at="2026-05-11T13:32:08 IST" duration-ms="6528" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testAddInterviewRound -->
-        <test-method signature="testBlankInterviewRoundValidation()[pri:2, instance:com.hrms.tests.InterviewRoundMasterTest@293a5bf6]" started-at="2026-04-29T15:48:32 IST" name="testBlankInterviewRoundValidation" description="Verify blank validation for interview timeline form" finished-at="2026-04-29T15:48:39 IST" duration-ms="6528" status="PASS">
+        <test-method signature="testBlankInterviewRoundValidation()[pri:2, instance:com.hrms.tests.InterviewRoundMasterTest@293a5bf6]" started-at="2026-05-11T13:32:08 IST" name="testBlankInterviewRoundValidation" description="Verify blank validation for interview timeline form" finished-at="2026-05-11T13:32:14 IST" duration-ms="6263" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testBlankInterviewRoundValidation -->
       </class> <!-- com.hrms.tests.InterviewRoundMasterTest -->
     </test> <!-- Interview Round Master Tests -->
-    <test started-at="2026-04-29T15:48:39 IST" name="Designation master Tests" finished-at="2026-04-29T15:48:57 IST" duration-ms="17654">
+    <test started-at="2026-05-11T13:32:14 IST" name="Designation master Tests" finished-at="2026-05-11T13:32:32 IST" duration-ms="17776">
       <class name="com.hrms.tests.DesignationmasterTest">
-        <test-method is-config="true" signature="loginAndInitPage()[pri:0, instance:com.hrms.tests.DesignationmasterTest@3349e9bb]" started-at="2026-04-29T15:48:39 IST" name="loginAndInitPage" finished-at="2026-04-29T15:48:39 IST" duration-ms="335" status="PASS">
+        <test-method is-config="true" signature="loginAndInitPage()[pri:0, instance:com.hrms.tests.DesignationmasterTest@3349e9bb]" started-at="2026-05-11T13:32:14 IST" name="loginAndInitPage" finished-at="2026-05-11T13:32:14 IST" duration-ms="30" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginAndInitPage -->
-        <test-method signature="testAdddesignation()[pri:1, instance:com.hrms.tests.DesignationmasterTest@3349e9bb]" started-at="2026-04-29T15:48:39 IST" name="testAdddesignation" description="Adding a new Designation with valid data should succeed" finished-at="2026-04-29T15:48:44 IST" duration-ms="4801" status="PASS">
+        <test-method signature="testAdddesignation()[pri:1, instance:com.hrms.tests.DesignationmasterTest@3349e9bb]" started-at="2026-05-11T13:32:14 IST" name="testAdddesignation" description="Adding a new Designation with valid data should succeed" finished-at="2026-05-11T13:32:20 IST" duration-ms="5134" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testAdddesignation -->
-        <test-method signature="testDuplicateDesignationValidation()[pri:2, instance:com.hrms.tests.DesignationmasterTest@3349e9bb]" started-at="2026-04-29T15:48:44 IST" name="testDuplicateDesignationValidation" description="Adding a Designation that already exists should show a duplicate error" finished-at="2026-04-29T15:48:55 IST" duration-ms="10884" status="PASS">
+        <test-method signature="testDuplicateDesignationValidation()[pri:2, instance:com.hrms.tests.DesignationmasterTest@3349e9bb]" started-at="2026-05-11T13:32:20 IST" name="testDuplicateDesignationValidation" description="Adding a Designation that already exists should show a duplicate error" finished-at="2026-05-11T13:32:31 IST" duration-ms="11084" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testDuplicateDesignationValidation -->
-        <test-method signature="testDeleteCompany()[pri:3, instance:com.hrms.tests.DesignationmasterTest@3349e9bb]" started-at="2026-04-29T15:48:55 IST" name="testDeleteCompany" description="Deleting the last Designation in the list should complete without error" finished-at="2026-04-29T15:48:57 IST" duration-ms="1616" status="PASS">
+        <test-method signature="testDeleteCompany()[pri:3, instance:com.hrms.tests.DesignationmasterTest@3349e9bb]" started-at="2026-05-11T13:32:31 IST" name="testDeleteCompany" description="Deleting the last Designation in the list should complete without error" finished-at="2026-05-11T13:32:32 IST" duration-ms="1527" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testDeleteCompany -->
       </class> <!-- com.hrms.tests.DesignationmasterTest -->
     </test> <!-- Designation master Tests -->
-    <test started-at="2026-04-29T15:48:57 IST" name="Department Master Tests" finished-at="2026-04-29T15:49:14 IST" duration-ms="17834">
+    <test started-at="2026-05-11T13:32:32 IST" name="Department Master Tests" finished-at="2026-05-11T13:32:50 IST" duration-ms="17975">
       <class name="com.hrms.tests.DepartmentmasterTest">
-        <test-method is-config="true" signature="loginAndInitPage()[pri:0, instance:com.hrms.tests.DepartmentmasterTest@35d019a3]" started-at="2026-04-29T15:48:57 IST" name="loginAndInitPage" finished-at="2026-04-29T15:48:57 IST" duration-ms="33" status="PASS">
+        <test-method is-config="true" signature="loginAndInitPage()[pri:0, instance:com.hrms.tests.DepartmentmasterTest@35d019a3]" started-at="2026-05-11T13:32:32 IST" name="loginAndInitPage" finished-at="2026-05-11T13:32:32 IST" duration-ms="25" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginAndInitPage -->
-        <test-method signature="testAddDepartment()[pri:1, instance:com.hrms.tests.DepartmentmasterTest@35d019a3]" started-at="2026-04-29T15:48:57 IST" name="testAddDepartment" description="Adding a new department with valid data should succeed" finished-at="2026-04-29T15:49:01 IST" duration-ms="4848" status="PASS">
+        <test-method signature="testAddDepartment()[pri:1, instance:com.hrms.tests.DepartmentmasterTest@35d019a3]" started-at="2026-05-11T13:32:32 IST" name="testAddDepartment" description="Adding a new department with valid data should succeed" finished-at="2026-05-11T13:32:37 IST" duration-ms="5096" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testAddDepartment -->
-        <test-method signature="testDuplicateDepartmentValidation()[pri:2, instance:com.hrms.tests.DepartmentmasterTest@35d019a3]" started-at="2026-04-29T15:49:01 IST" name="testDuplicateDepartmentValidation" description="Adding a department that already exists should show a duplicate error" finished-at="2026-04-29T15:49:13 IST" duration-ms="11261" status="PASS">
+        <test-method signature="testDuplicateDepartmentValidation()[pri:2, instance:com.hrms.tests.DepartmentmasterTest@35d019a3]" started-at="2026-05-11T13:32:37 IST" name="testDuplicateDepartmentValidation" description="Adding a department that already exists should show a duplicate error" finished-at="2026-05-11T13:32:49 IST" duration-ms="11251" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testDuplicateDepartmentValidation -->
-        <test-method signature="testDeleteDepartment()[pri:3, instance:com.hrms.tests.DepartmentmasterTest@35d019a3]" started-at="2026-04-29T15:49:13 IST" name="testDeleteDepartment" description="Deleting the last department in the list should complete without error" finished-at="2026-04-29T15:49:14 IST" duration-ms="1692" status="PASS">
+        <test-method signature="testDeleteDepartment()[pri:3, instance:com.hrms.tests.DepartmentmasterTest@35d019a3]" started-at="2026-05-11T13:32:49 IST" name="testDeleteDepartment" description="Deleting the last department in the list should complete without error" finished-at="2026-05-11T13:32:50 IST" duration-ms="1603" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testDeleteDepartment -->
       </class> <!-- com.hrms.tests.DepartmentmasterTest -->
     </test> <!-- Department Master Tests -->
-    <test started-at="2026-04-29T15:49:14 IST" name="Division Master Tests" finished-at="2026-04-29T15:49:51 IST" duration-ms="36272">
+    <test started-at="2026-05-11T13:32:50 IST" name="Division Master Tests" finished-at="2026-05-11T13:33:27 IST" duration-ms="36797">
       <class name="com.hrms.tests.DivisionmasterTest">
-        <test-method is-config="true" signature="loginAndInitPage()[pri:0, instance:com.hrms.tests.DivisionmasterTest@2a65fe7c]" started-at="2026-04-29T15:49:14 IST" name="loginAndInitPage" finished-at="2026-04-29T15:49:15 IST" duration-ms="33" status="PASS">
+        <test-method is-config="true" signature="loginAndInitPage()[pri:0, instance:com.hrms.tests.DivisionmasterTest@2a65fe7c]" started-at="2026-05-11T13:32:50 IST" name="loginAndInitPage" finished-at="2026-05-11T13:32:51 IST" duration-ms="39" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginAndInitPage -->
-        <test-method signature="testAddDivision()[pri:1, instance:com.hrms.tests.DivisionmasterTest@2a65fe7c]" started-at="2026-04-29T15:49:15 IST" name="testAddDivision" description="Adding a new division with valid data should succeed" finished-at="2026-04-29T15:49:19 IST" duration-ms="4463" status="PASS">
+        <test-method signature="testAddDivision()[pri:1, instance:com.hrms.tests.DivisionmasterTest@2a65fe7c]" started-at="2026-05-11T13:32:51 IST" name="testAddDivision" description="Adding a new division with valid data should succeed" finished-at="2026-05-11T13:32:55 IST" duration-ms="4464" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testAddDivision -->
-        <test-method signature="testDuplicateDivisionValidation()[pri:2, instance:com.hrms.tests.DivisionmasterTest@2a65fe7c]" started-at="2026-04-29T15:49:19 IST" name="testDuplicateDivisionValidation" description="Adding a division that already exists should show a duplicate error" finished-at="2026-04-29T15:49:30 IST" duration-ms="10687" status="PASS">
+        <test-method signature="testDuplicateDivisionValidation()[pri:2, instance:com.hrms.tests.DivisionmasterTest@2a65fe7c]" started-at="2026-05-11T13:32:55 IST" name="testDuplicateDivisionValidation" description="Adding a division that already exists should show a duplicate error" finished-at="2026-05-11T13:33:06 IST" duration-ms="11340" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testDuplicateDivisionValidation -->
-        <test-method signature="testDeleteDivision()[pri:3, instance:com.hrms.tests.DivisionmasterTest@2a65fe7c]" started-at="2026-04-29T15:49:30 IST" name="testDeleteDivision" description="Deleting the last division in the list should complete without error" finished-at="2026-04-29T15:49:51 IST" duration-ms="21089" status="PASS">
+        <test-method signature="testDeleteDivision()[pri:3, instance:com.hrms.tests.DivisionmasterTest@2a65fe7c]" started-at="2026-05-11T13:33:06 IST" name="testDeleteDivision" description="Deleting the last division in the list should complete without error" finished-at="2026-05-11T13:33:27 IST" duration-ms="20954" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testDeleteDivision -->
       </class> <!-- com.hrms.tests.DivisionmasterTest -->
     </test> <!-- Division Master Tests -->
-    <test started-at="2026-04-29T15:49:51 IST" name="Grade Master Tests" finished-at="2026-04-29T15:50:28 IST" duration-ms="36704">
+    <test started-at="2026-05-11T13:33:27 IST" name="Grade Master Tests" finished-at="2026-05-11T13:34:03 IST" duration-ms="35984">
       <class name="com.hrms.tests.GrademasterTest">
-        <test-method is-config="true" signature="suiteSetUp()[pri:0, instance:com.hrms.tests.GrademasterTest@6f1de4c7]" started-at="2026-04-29T15:46:26 IST" name="suiteSetUp" finished-at="2026-04-29T15:47:04 IST" duration-ms="37160" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- suiteSetUp -->
-        <test-method is-config="true" signature="loginAndInitPage()[pri:0, instance:com.hrms.tests.GrademasterTest@6f1de4c7]" started-at="2026-04-29T15:49:51 IST" name="loginAndInitPage" finished-at="2026-04-29T15:49:51 IST" duration-ms="13" status="PASS">
+        <test-method is-config="true" signature="loginAndInitPage()[pri:0, instance:com.hrms.tests.GrademasterTest@6f1de4c7]" started-at="2026-05-11T13:33:27 IST" name="loginAndInitPage" finished-at="2026-05-11T13:33:27 IST" duration-ms="43" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginAndInitPage -->
-        <test-method signature="testAddGrade()[pri:1, instance:com.hrms.tests.GrademasterTest@6f1de4c7]" started-at="2026-04-29T15:49:51 IST" name="testAddGrade" description="Adding a new grade with valid data should succeed" finished-at="2026-04-29T15:49:55 IST" duration-ms="4640" status="PASS">
+        <test-method signature="testAddGrade()[pri:1, instance:com.hrms.tests.GrademasterTest@6f1de4c7]" started-at="2026-05-11T13:33:27 IST" name="testAddGrade" description="Adding a new grade with valid data should succeed" finished-at="2026-05-11T13:33:32 IST" duration-ms="4771" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testAddGrade -->
-        <test-method signature="testDuplicateGradeValidation()[pri:2, instance:com.hrms.tests.GrademasterTest@6f1de4c7]" started-at="2026-04-29T15:49:55 IST" name="testDuplicateGradeValidation" description="Adding a grade that already exists should show a duplicate error" finished-at="2026-04-29T15:50:06 IST" duration-ms="10477" status="PASS">
+        <test-method signature="testDuplicateGradeValidation()[pri:2, instance:com.hrms.tests.GrademasterTest@6f1de4c7]" started-at="2026-05-11T13:33:32 IST" name="testDuplicateGradeValidation" description="Adding a grade that already exists should show a duplicate error" finished-at="2026-05-11T13:33:43 IST" duration-ms="10581" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testDuplicateGradeValidation -->
-        <test-method signature="testDeleteGrade()[pri:3, instance:com.hrms.tests.GrademasterTest@6f1de4c7]" started-at="2026-04-29T15:50:06 IST" name="testDeleteGrade" description="Deleting the last grade in the list should complete without error" finished-at="2026-04-29T15:50:28 IST" duration-ms="21574" status="PASS">
+        <test-method signature="testDeleteGrade()[pri:3, instance:com.hrms.tests.GrademasterTest@6f1de4c7]" started-at="2026-05-11T13:33:43 IST" name="testDeleteGrade" description="Deleting the last grade in the list should complete without error" finished-at="2026-05-11T13:34:03 IST" duration-ms="20587" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testDeleteGrade -->
-        <test-method is-config="true" signature="suiteTearDown()[pri:0, instance:com.hrms.tests.GrademasterTest@6f1de4c7]" started-at="2026-04-29T15:50:28 IST" name="suiteTearDown" finished-at="2026-04-29T15:50:34 IST" duration-ms="6220" status="PASS">
+      </class> <!-- com.hrms.tests.GrademasterTest -->
+    </test> <!-- Grade Master Tests -->
+    <test started-at="2026-05-11T13:34:03 IST" name="Holiday Master Tests" finished-at="2026-05-11T13:34:40 IST" duration-ms="36451">
+      <class name="com.hrms.tests.HolidayMasterTest">
+        <test-method is-config="true" signature="loginAndInitPage()[pri:0, instance:com.hrms.tests.HolidayMasterTest@4c583ecf]" started-at="2026-05-11T13:34:03 IST" name="loginAndInitPage" finished-at="2026-05-11T13:34:04 IST" duration-ms="61" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginAndInitPage -->
+        <test-method signature="testAddHoliday()[pri:1, instance:com.hrms.tests.HolidayMasterTest@4c583ecf]" started-at="2026-05-11T13:34:04 IST" name="testAddHoliday" description="Adding a new holiday with valid data should succeed" finished-at="2026-05-11T13:34:08 IST" duration-ms="4901" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAddHoliday -->
+        <test-method signature="testDuplicateHolidayValidation()[pri:2, instance:com.hrms.tests.HolidayMasterTest@4c583ecf]" started-at="2026-05-11T13:34:08 IST" name="testDuplicateHolidayValidation" description="Adding a holiday that already exists should show a duplicate error" finished-at="2026-05-11T13:34:19 IST" duration-ms="10767" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDuplicateHolidayValidation -->
+        <test-method signature="testDeleteHoliday()[pri:3, instance:com.hrms.tests.HolidayMasterTest@4c583ecf]" started-at="2026-05-11T13:34:19 IST" name="testDeleteHoliday" description="Deleting the last holiday in the list should complete without error" finished-at="2026-05-11T13:34:40 IST" duration-ms="20722" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDeleteHoliday -->
+      </class> <!-- com.hrms.tests.HolidayMasterTest -->
+    </test> <!-- Holiday Master Tests -->
+    <test started-at="2026-05-11T13:34:40 IST" name="Location Master Tests" finished-at="2026-05-11T13:35:44 IST" duration-ms="64353">
+      <class name="com.hrms.tests.LocationMasterTest">
+        <test-method is-config="true" signature="loginAndInitPage()[pri:0, instance:com.hrms.tests.LocationMasterTest@55141def]" started-at="2026-05-11T13:34:40 IST" name="loginAndInitPage" finished-at="2026-05-11T13:34:40 IST" duration-ms="7" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginAndInitPage -->
+        <test-method signature="testAddLocation()[pri:1, instance:com.hrms.tests.LocationMasterTest@55141def]" started-at="2026-05-11T13:34:40 IST" name="testAddLocation" description="Adding a new location with valid data should succeed" finished-at="2026-05-11T13:34:47 IST" duration-ms="6925" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAddLocation -->
+        <test-method signature="testDuplicateLocationValidation()[pri:2, instance:com.hrms.tests.LocationMasterTest@55141def]" started-at="2026-05-11T13:34:47 IST" name="testDuplicateLocationValidation" description="Adding a location that already exists should show a duplicate error" finished-at="2026-05-11T13:35:02 IST" duration-ms="14896" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDuplicateLocationValidation -->
+        <test-method signature="testDeleteLocation()[pri:3, instance:com.hrms.tests.LocationMasterTest@55141def]" started-at="2026-05-11T13:35:02 IST" name="testDeleteLocation" description="Deleting the last location in the list should complete without error" finished-at="2026-05-11T13:35:44 IST" duration-ms="42524" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDeleteLocation -->
+      </class> <!-- com.hrms.tests.LocationMasterTest -->
+    </test> <!-- Location Master Tests -->
+    <test started-at="2026-05-11T13:35:45 IST" name="Letter Template Master Tests" finished-at="2026-05-11T13:36:13 IST" duration-ms="27933">
+      <class name="com.hrms.tests.LettermanagementMasterTest">
+        <test-method is-config="true" signature="suiteSetUp()[pri:0, instance:com.hrms.tests.LettermanagementMasterTest@71d44a3]" started-at="2026-05-11T13:29:39 IST" name="suiteSetUp" finished-at="2026-05-11T13:30:16 IST" duration-ms="37189" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- suiteSetUp -->
+        <test-method is-config="true" signature="loginAndInitPage()[pri:0, instance:com.hrms.tests.LettermanagementMasterTest@71d44a3]" started-at="2026-05-11T13:35:45 IST" name="loginAndInitPage" finished-at="2026-05-11T13:35:45 IST" duration-ms="46" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginAndInitPage -->
+        <test-method signature="testPageTitle()[pri:1, instance:com.hrms.tests.LettermanagementMasterTest@71d44a3]" started-at="2026-05-11T13:35:45 IST" name="testPageTitle" description="Verify the page title / breadcrumb contains &#039;Letter Template Master&#039;" finished-at="2026-05-11T13:35:47 IST" duration-ms="2103" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testPageTitle -->
+        <test-method signature="testSelectTemplate()[pri:2, instance:com.hrms.tests.LettermanagementMasterTest@71d44a3]" started-at="2026-05-11T13:35:47 IST" name="testSelectTemplate" description="Verify the template dropdown selects an option correctly" finished-at="2026-05-11T13:35:50 IST" duration-ms="3408" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSelectTemplate -->
+        <test-method signature="testSelectFieldVariable()[pri:3, instance:com.hrms.tests.LettermanagementMasterTest@71d44a3]" started-at="2026-05-11T13:35:50 IST" name="testSelectFieldVariable" description="Verify the field-variable dropdown selects an option correctly" finished-at="2026-05-11T13:35:55 IST" duration-ms="4632" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSelectFieldVariable -->
+        <test-method signature="testEditorAcceptsInput()[pri:4, instance:com.hrms.tests.LettermanagementMasterTest@71d44a3]" started-at="2026-05-11T13:35:55 IST" name="testEditorAcceptsInput" description="Verify the rich-text editor accepts and retains typed input" finished-at="2026-05-11T13:35:58 IST" duration-ms="3701" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testEditorAcceptsInput -->
+        <test-method signature="testMandatoryValidation()[pri:5, instance:com.hrms.tests.LettermanagementMasterTest@71d44a3]" started-at="2026-05-11T13:35:58 IST" name="testMandatoryValidation" description="Verify mandatory-field validation when submitting with empty editor" finished-at="2026-05-11T13:36:05 IST" duration-ms="6889" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMandatoryValidation -->
+        <test-method signature="testSubmitWithValidData()[pri:6, instance:com.hrms.tests.LettermanagementMasterTest@71d44a3]" started-at="2026-05-11T13:36:05 IST" name="testSubmitWithValidData" description="Verify submit success when all required fields are filled" finished-at="2026-05-11T13:36:13 IST" duration-ms="7146" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSubmitWithValidData -->
+        <test-method is-config="true" signature="suiteTearDown()[pri:0, instance:com.hrms.tests.LettermanagementMasterTest@71d44a3]" started-at="2026-05-11T13:36:13 IST" name="suiteTearDown" finished-at="2026-05-11T13:36:19 IST" duration-ms="6781" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- suiteTearDown -->
-      </class> <!-- com.hrms.tests.GrademasterTest -->
-    </test> <!-- Grade Master Tests -->
+      </class> <!-- com.hrms.tests.LettermanagementMasterTest -->
+    </test> <!-- Letter Template Master Tests -->
   </suite> <!-- HRMS Test Suite -->
 </testng-results>

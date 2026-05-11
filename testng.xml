@@ -59,4 +59,22 @@
         </classes>
     </test>
 
+    <test name="Holiday Master Tests">
+        <classes>
+            <class name="com.hrms.tests.HolidayMasterTest"/>
+        </classes>
+    </test>
+
+    <test name="Location Master Tests">
+        <classes>
+            <class name="com.hrms.tests.LocationMasterTest"/>
+        </classes>
+    </test>
+
+    <test name="Letter Template Master Tests">
+        <classes>
+            <class name="com.hrms.tests.LettermanagementMasterTest"/>
+        </classes>
+    </test>
+
 </suite>
