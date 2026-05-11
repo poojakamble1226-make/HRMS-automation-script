@@ -15,7 +15,7 @@ public class CompanyMasterPage extends BasePage {
     private final By submitBtn        = By.cssSelector("button[type='submit']");
     private final By tableRows        = By.cssSelector("table tbody tr");
     private final By lastRowDeleteBtn = By.cssSelector("table tbody tr:last-child button, table tbody tr:last-child [class*='delete'], table tbody tr:last-child a");
-    private final By deleteIcon       = By.cssSelector("[class*='delete']");
+    // private final By deleteIcon       = By.cssSelector("[class*='delete']");
     private final By confirmYesBtn    = By.xpath("//button[contains(text(),'Yes') or contains(text(),'OK') or contains(text(),'Confirm')]");
 
     public CompanyMasterPage(WebDriver driver, int waitSeconds) {
